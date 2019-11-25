@@ -1,1 +1,5 @@
 .Rproj.user
+.DS_Store
+.Rbuildignore
+.Rhistory
+.github/
