@@ -1,0 +1,65 @@
+﻿team_id,pri_stadium_name,pri_town,pri_state,pri_capacity,sec_stadium_name,sec_town,sec_state,sec_capacity,avg_attendance ,year
+BOS ,Dilboy Stadium,Somerville ,MA,2000,,,,,2427,2013
+BOS ,Harvard Stadium,Boston,MA,30323,,,,,2437,2014
+BOS ,Jordan Field,Boston,MA,4100,,,,,2860,2015
+BOS ,Jordan Field,Boston,MA,4100,,,,,3570,2016
+BOS ,Jordan Field,Boston,MA,4100,,,,,2896,2017
+FCKC,Shawnee Mission District Stadium,Overland Park,KS,6150,,,,,4626,2013
+FCKC,Durwood Soccer Stadium,Kansas City,MO,3200,,,,,2018,2014
+FCKC,Swope Soccer Village,Kansas City,MO,3557,Children's Mercy Park,Kansas City,KS,18467,3091,2015
+FCKC,Swope Soccer Village,Kansas City,MO,3557,Children's Mercy Park,Kansas City,KS,18467,3162,2016
+FCKC,Swope Soccer Village,Kansas City,MO,3557,Children's Mercy Park,Kansas City,KS,18467,1788,2017
+WNY,Sahlen's Stadium,Rochester,NY,13768,,,,,4485,2013
+WNY,Sahlen's Stadium,Rochester,NY,13768,,,,,3177,2014
+WNY,Sahlen's Stadium,Rochester,NY,13768,,,,,2860,2015
+WNY,Sahlen's Stadium,Rochester,NY,13768,Frontier Field,Rochester,NY,13500,3868,2016
+CRS,Sports Complex at Benedictine University,Lisle,IL,3000,,,,,1713,2013
+CRS,Sports Complex at Benedictine University,Lisle,IL,3000,SeatGeek Stadium,Bridgeview,IL,20000,2949,2014
+CRS,Sports Complex at Benedictine University,Lisle,IL,3000,SeatGeek Stadium,Bridgeview,IL,20000,4087,2015
+CRS,SeakGeek Stadium,Bridgeview,IL,20000,,,,,3005,2016
+CRS,SeakGeek Stadium,Bridgeview,IL,20000,,,,,3196,2017
+CRS,SeakGeek Stadium,Bridgeview,IL,20000,,,,,4368,2018
+CRS,SeakGeek Stadium,Bridgeview,IL,20000,,,,,5451,2019
+POR,Providence Park,Portland,OR,20438,,,,,13320,2013
+POR,Providence Park,Portland,OR,20438,,,,,13362,2014
+POR,Providence Park,Portland,OR,20438,,,,,15639,2015
+POR,Providence Park,Portland,OR,20438,,,,,16945,2016
+POR,Providence Park,Portland,OR,20438,,,,,17653,2017
+POR,Providence Park,Portland,OR,20438,,,,,16959,2018
+POR,Providence Park,Portland,OR,25000,,,,,20098,2019
+RFC,Starfire Sports Complex,Tukwila,WA,4500,,,,,2306,2013
+RFC,Memorial Stadium,Seattle,WA,12000,Starfire Sports Complex,Tukwila,WA,4500,3666,2014
+RFC,Memorial Stadium,Seattle,WA,12000,,,,,4060,2015
+RFC,Memorial Stadium,Seattle,WA,12000,,,,,4602,2016
+RFC,Memorial Stadium,Seattle,WA,12000,,,,,4037,2017
+RFC,Memorial Stadium,Seattle,WA,12000,,,,,3824,2018
+RFC,Cheney Stadium,Tacoma,WA,6500,,,,,5213,2019
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,1677,2013
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,1640,2014
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,2189,2015
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,2162,2016
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,2613,2017
+SBFC,Yurcak Field,New Brunswick,NJ,5000,,,,,2531,2018
+SBFC,Yurcak Field,New Brunswick,NJ,5000,Red Bull Arena,Harrison,NJ,25000,3338,2019
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,3626,2013
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,3335,2014
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,4210,2015
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,3782,2016
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,3491,2017
+WAS,Maryland SoccerPlex,Boyds,MD,4000,,,,,3892,2018
+WAS,Maryland SoccerPlex,Boyds,MD,4000,Audi Field,Washington,DC,20000,6105,2019
+HOU,BBVA Stadium,Houston,TX,7000,,,,,4650,2014
+HOU,BBVA Stadium,Houston,TX,7000,,,,,6413,2015
+HOU,BBVA Stadium,Houston,TX,7000,,,,,5696,2016
+HOU,BBVA Stadium,Houston,TX,7000,,,,,4578,2017
+HOU,BBVA Stadium,Houston,TX,7000,,,,,3896,2018
+HOU,BBVA Stadium,Houston,TX,7000,,,,,3615,2019
+ORL,Camping World Stadium,Orlando,FL,19500,,,,,8785,2016
+ORL,Exploria Stadium,Orlando,FL,25500,,,,,6186,2017
+ORL,Exploria Stadium,Orlando,FL,25500,,,,,4837,2018
+ORL,Exploria Stadium,Orlando,FL,25500,,,,,5565,2019
+URFC,Rio Tinto Stadium,Sandy ,UT,20213,,,,,9466,2018
+URFC,Rio Tinto Stadium,Sandy ,UT,20213,,,,,10774,2019
+NCC,WakeMed Soccer Park,Cary,NC,10000,,,,,4389,2017
+NCC,WakeMed Soccer Park,Cary,NC,10000,,,,,5129,2018
+NCC,WakeMed Soccer Park,Cary,NC,10000,,,,,5875,2019
