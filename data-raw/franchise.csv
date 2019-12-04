@@ -4,22 +4,22 @@ BOS,Boston Breakers,Boston ,MA,2014
 BOS,Boston Breakers,Boston ,MA,2015
 BOS,Boston Breakers,Boston ,MA,2016
 BOS,Boston Breakers,Boston ,MA,2017
-FCKC,FC Kansas City,Kansas City,MO,2013
-FCKC,FC Kansas City,Kansas City,MO,2014
-FCKC,FC Kansas City,Kansas City,MO,2015
-FCKC,FC Kansas City,Kansas City,MO,2016
-FCKC,FC Kansas City,Kansas City,MO,2017
+KC,FC Kansas City,Kansas City,MO,2013
+KC,FC Kansas City,Kansas City,MO,2014
+KC,FC Kansas City,Kansas City,MO,2015
+KC,FC Kansas City,Kansas City,MO,2016
+KC,FC Kansas City,Kansas City,MO,2017
 WNY,Western New York Flash,Buffalo,NY,2013
 WNY,Western New York Flash,Buffalo,NY,2014
 WNY,Western New York Flash,Buffalo,NY,2015
 WNY,Western New York Flash,Buffalo,NY,2016
-CRS,Chicago Red Stars,Chicago,IL,2013
-CRS,Chicago Red Stars,Chicago,IL,2014
-CRS,Chicago Red Stars,Chicago,IL,2015
-CRS,Chicago Red Stars,Chicago,IL,2016
-CRS,Chicago Red Stars,Chicago,IL,2017
-CRS,Chicago Red Stars,Chicago,IL,2018
-CRS,Chicago Red Stars,Chicago,IL,2019
+CHI,Chicago Red Stars,Chicago,IL,2013
+CHI,Chicago Red Stars,Chicago,IL,2014
+CHI,Chicago Red Stars,Chicago,IL,2015
+CHI,Chicago Red Stars,Chicago,IL,2016
+CHI,Chicago Red Stars,Chicago,IL,2017
+CHI,Chicago Red Stars,Chicago,IL,2018
+CHI,Chicago Red Stars,Chicago,IL,2019
 POR,Portland Thorns FC,Portland,OR,2013
 POR,Portland Thorns FC,Portland,OR,2014
 POR,Portland Thorns FC,Portland,OR,2015
@@ -28,19 +28,19 @@ POR,Portland Thorns FC,Portland,OR,2017
 POR,Portland Thorns FC,Portland,OR,2018
 POR,Portland Thorns FC,Portland,OR,2019
 RFC,Seattle Reign FC,Seattle,WA,2013
-RFC,Seattle Reign FC,Seattle,WA,2014
-RFC,Seattle Reign FC,Seattle,WA,2015
-RFC,Seattle Reign FC,Seattle,WA,2016
-RFC,Seattle Reign FC,Seattle,WA,2017
-RFC,Seattle Reign FC,Seattle,WA,2018
-RFC,Reign FC,Tacoma,WA,2019
-SBFC,Sky Blue FC,New Brunswick,NJ,2013
-SBFC,Sky Blue FC,New Brunswick,NJ,2014
-SBFC,Sky Blue FC,New Brunswick,NJ,2015
-SBFC,Sky Blue FC,New Brunswick,NJ,2016
-SBFC,Sky Blue FC,New Brunswick,NJ,2017
-SBFC,Sky Blue FC,New Brunswick,NJ,2018
-SBFC,Sky Blue FC,New Brunswick,NJ,2019
+SEA,Seattle Reign FC,Seattle,WA,2014
+SEA,Seattle Reign FC,Seattle,WA,2015
+SEA,Seattle Reign FC,Seattle,WA,2016
+SEA,Seattle Reign FC,Seattle,WA,2017
+SEA,Seattle Reign FC,Seattle,WA,2018
+SEA,Reign FC,Tacoma,WA,2019
+NJ,Sky Blue FC,New Brunswick,NJ,2013
+NJ,Sky Blue FC,New Brunswick,NJ,2014
+NJ,Sky Blue FC,New Brunswick,NJ,2015
+NJ,Sky Blue FC,New Brunswick,NJ,2016
+NJ,Sky Blue FC,New Brunswick,NJ,2017
+NJ,Sky Blue FC,New Brunswick,NJ,2018
+NJ,Sky Blue FC,New Brunswick,NJ,2019
 WAS,Washington Spirit,Washington,DC,2013
 WAS,Washington Spirit,Washington,DC,2014
 WAS,Washington Spirit,Washington,DC,2015
@@ -58,8 +58,8 @@ ORL,Orlando Pride,Orlando,FL,2016
 ORL,Orlando Pride,Orlando,FL,2017
 ORL,Orlando Pride,Orlando,FL,2018
 ORL,Orlando Pride,Orlando,FL,2019
-URFC,Utah Royals FC,Sandy,UT,2018
-URFC,Utah Royals FC,Sandy,UT,2019
-NCC,North Carolina Courage,Cary,NC,2017
-NCC,North Carolina Courage,Cary,NC,2018
-NCC,North Carolina Courage,Cary,NC,2019
+UTA,Utah Royals FC,Sandy,UT,2018
+UTA,Utah Royals FC,Sandy,UT,2019
+NC,North Carolina Courage,Cary,NC,2017
+NC,North Carolina Courage,Cary,NC,2018
+NC,North Carolina Courage,Cary,NC,2019
