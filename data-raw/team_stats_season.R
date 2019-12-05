@@ -1,3 +1,5 @@
+## code to prepare `team_stats_season` dataset goes here
+
 library(jsonlite)
 library(tidyverse)
 library(snakecase)
@@ -27,7 +29,7 @@ team_data_clean <- team_data %>%
   rename_all(.funs = to_any_case) %>%
   rename(team_id = team_name,
          season = team_year)
-
+#adding team records (this wasn't scrapable at the time, but hopefully it is eventually?)
 team_records <- data.frame(team_id = c("BOS", "BOS",
                                        "CHI", "CHI", "CHI", "CHI",
                                        "HOU", "HOU", "HOU", "HOU",
@@ -52,7 +54,7 @@ team_records <- data.frame(team_id = c("BOS", "BOS",
                                       2018:2019,
                                       2016:2019,
                                       2016
-                                      ),
+                           ),
                            wins = c(3, 4,
                                     9, 11, 9, 14,
                                     6, 7, 9, 7,
@@ -89,6 +91,8 @@ team_records <- data.frame(team_id = c("BOS", "BOS",
                                       7, 10,
                                       5, 15, 17, 8,
                                       6)
-                           )
+)
 
 team_stats_season <- left_join(x = team_data_clean, team_records, by = c("season" = "season", "team_id" = "team_id"))
+
+usethis::use_data(team_stats_season)
