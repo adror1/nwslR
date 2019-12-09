@@ -61,5 +61,9 @@ fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
   mutate(personid = group_indices(., Player, Born, Nation))
 
+#converting to snake case
+fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
+  rename_all(.funs = to_any_case)
+
 #exporting final data
 usethis::use_data(fp_overall_season_stats, overwrite = TRUE)
