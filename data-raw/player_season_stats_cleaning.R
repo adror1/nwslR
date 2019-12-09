@@ -25,7 +25,7 @@ goalkeeper_season_stats <- goalkeeper_season_stats %>%
 
 #removing unneccesary columns
 goalkeeper_season_stats <- goalkeeper_season_stats %>%
-  select(-Rk, -Matches)
+  select(-Rk, -Matches, -Player)
 
 goalkeeper_season_stats <- goalkeeper_season_stats %>%
   mutate(personid = 10000 + group_indices(., Player, Nation))
@@ -57,7 +57,7 @@ fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
 
 #removing unneccesary columns
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
-  select(-Rk)
+  select(-Rk, -Player)
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
   mutate(personid = group_indices(., Player, Born, Nation))
 
