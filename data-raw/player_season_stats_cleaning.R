@@ -3,6 +3,8 @@ library(tidyverse)
 library(readr)
 library(readxl)
 library(fs)
+library(snakecase)
+
 #loading in goalkeeper stats
 #vector of goalkeeper filenames
 keeperfiles <- fs::dir_ls("data-raw", regexp = 'goalkeepers_season')
@@ -27,6 +29,10 @@ goalkeeper_season_stats <- goalkeeper_season_stats %>%
 
 goalkeeper_season_stats <- goalkeeper_season_stats %>%
   mutate(personid = 10000 + group_indices(., Player, Nation))
+
+#converting to snake case
+goalkeeper_season_stats <- goalkeeper_season_stats %>%
+  rename_all(.funs = to_any_case)
 
 #exporting final data
 usethis::use_data(goalkeeper_season_stats, overwrite = TRUE)
