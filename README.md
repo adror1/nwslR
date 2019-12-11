@@ -25,8 +25,10 @@ library(nwslR)
 ## Available Tables
 
 fp_overall_season_stats: season-by-season data for each NWSL field player
+
 goalkeeper_season_stats: season-by-season data for each NWSL goalkeeper
 team_stats_season: season level statistics for each team from the league's inception through present-day
+
 franchise: team names, ids, and locations throughout their history in the league
 stadium: historical and current stadium information and statistics
 
