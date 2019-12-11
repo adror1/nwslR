@@ -144,4 +144,4 @@ goalkeeper_season_stats <- goalkeeper_season_stats[,c(18, 1:17, 19, 20)]
 #exporting final GK data
 usethis::use_data(goalkeeper_season_stats, overwrite = TRUE)
 #exporting final FP data
-usethis::use_data(fp_overall_season_stats, overwrite = TRUE)
+usethis::use_data(fieldplayer_overall_season_stats, overwrite = TRUE)
