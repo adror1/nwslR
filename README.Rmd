@@ -3,6 +3,9 @@ output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/nwslR)](https://CRAN.R-project.org/package=nwslR) [![Travis build status](https://travis-ci.org/adror1/nwslR.svg?branch=master)](https://travis-ci.org/adror1/nwslR) <!-- badges: end -->
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -14,31 +17,54 @@ knitr::opts_chunk$set(
 ```
 # nwslR
 
-<!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/nwslR)](https://CRAN.R-project.org/package=nwslR)
-[![Travis build status](https://travis-ci.org/adror1/nwslR.svg?branch=master)](https://travis-ci.org/adror1/nwslR)
-<!-- badges: end -->
 
-The goal of nwslR is to ...
+An R package providing users with NWSL player, team, franchise, and stadium data, as well as functionality to glean further data and information. 
 
-## Installation
+## Install 
 
-You can install the released version of nwslR from [CRAN](https://CRAN.R-project.org) with:
+You can install the current version of nwslR from GitHub using:
 
-``` r
-install.packages("nwslR")
+```{r}
+devtools::install_github("adror1/nwslR")
 ```
 
-## Example
+## Load
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r}
 library(nwslR)
-## basic example code
 ```
 
+## Available Tables
+
+`fp_overall_season_stats`: season-by-season data for each NWSL field player
+
+`goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
+
+`team_stats_season`: season level statistics for each team from the league's inception through present-day
+
+`franchise`: team names, ids, and locations throughout their history in the league
+
+`stadium`: historical and current stadium information and statistics
+
+## Example: Player Statistics
+
+```{r}
+nwslR::fieldplayer_overall_season_stats
+```
+
+## Example: Team IDs
+```{r}
+nwslR::franchise
+```
+
+## Functionality
+```{r, eval=FALSE}
+nwslR::get_adv_team_stats() #scrapes and formats hundreds of advanced team statistics from the NWSL website
+nwslR::get_adv_player_stats() #scrapes and formats advanced individual player stats from the NWSL website
+nwslR::player_search() #searches data tables based on player information such as name, nation, or position
+```
 
 You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
