@@ -8,8 +8,7 @@ nwslR
 
 The goal of nwslR is to ...
 
-Installation
-------------
+## Install
 
 You can install the current version of nwslR from GitHub using:
 
@@ -17,13 +16,13 @@ You can install the current version of nwslR from GitHub using:
 devtools::install_github("adror1/nwslR")
 ```
 
-##Load
+## Load
 
 ``` r
 library(nwslR)
 ```
 
-##View Player Statistics
+## View Player Statistics
 
 ``` r
 nwslR::fp_overall_season_stats
