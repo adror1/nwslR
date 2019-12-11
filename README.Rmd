@@ -51,12 +51,12 @@ library(nwslR)
 ## Example: Player Statistics
 
 ```{r}
-nwslR::fieldplayer_overall_season_stats
+head(nwslR::fieldplayer_overall_season_stats)
 ```
 
 ## Example: Team IDs
 ```{r}
-nwslR::franchise
+head(nwslR::franchise, 15)
 ```
 
 ## Functionality
@@ -66,8 +66,7 @@ nwslR::get_adv_player_stats() #scrapes and formats advanced individual player st
 nwslR::player_search() #searches data tables based on player information such as name, nation, or position
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+## Contributors
 
-You can also embed plots, for example:
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+- Arielle Dror
+- Sophia Tannir
