@@ -82,7 +82,7 @@ create_df <- function(list_of_scores, vector_of_games) {
   #combines the two rows and does some cleaning
   full_game_stat <- bind_rows(home_df_stats, away_df_stats) %>%
     rename_all(.funs = to_any_case) %>%
-    mutate_all(~replace(., is.na(.), 0))
+    mutate_at(vars(-game_id, -status, -team), ~as.numeric(.))
 
   #returns two rows
   return(full_game_stat)
@@ -109,9 +109,6 @@ if(year > 2019 | year < 2016){
   #gets all game IDs for a given year
   urls_for_boxscores <- pull_game_links(game_url)
 
-  # urls_for_boxscores <- urls_for_boxscores %>%
-  #   rename(slug = url_links)
-
   #game IDs become a vector
   vector_boxscores <- as.vector(urls_for_boxscores$url_links)
 
@@ -123,6 +120,8 @@ if(year > 2019 | year < 2016){
 
 
   team_boxscore <- map2_df(boxscores, vector_boxscores, create_df)
+
+  team_boxscore[is.na(team_boxscore)] <- 0
 
 
   return(team_boxscore)
