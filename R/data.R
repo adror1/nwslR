@@ -71,6 +71,24 @@
 
 "stadium"
 
+#' Game IDs for all games 2015-2019
+#'
+#' @docType data
+#' @format A dataframe of unique IDs for all games played from 2015-2019 with scores and winners
+#' \describe{
+#' \item{game_id}{unique identifier for each game}
+#' \item{game_date}{day the game was played}
+#' \item{home_team}{home team id}
+#' \item{away_team}{away team id}
+#' \item{home_pts}{number of goals scored by the home team}
+#' \item{away_pts}{number of goals scored by the away team}
+#' \item{winner}{team id for winning team, if applicable. If tied, NA.}
+#' }
+#'
+#' @source \url{https://www.nwslsoccer.com}
+
+"game"
+
 #' Players stats for goalkeepers in each season
 #'
 #' @docType data
@@ -102,3 +120,4 @@
 #'
 
 "goalkeeper_season_stats"
+
