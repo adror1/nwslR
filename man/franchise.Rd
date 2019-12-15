@@ -8,8 +8,8 @@
 \describe{
 \item{team_id}{the id of team as they appear across all datasets in \code{nwslR}}
 \item{team_name}{name of team}
-\item{city}{home state of team}
-\item{state}{total number of shot on goal}
+\item{city}{home city of team}
+\item{state}{home state of team}
 \item{season}{season for which the team was active}
 }}
 \source{

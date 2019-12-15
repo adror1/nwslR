@@ -3,7 +3,7 @@
 \docType{data}
 \name{goalkeeper_season_stats}
 \alias{goalkeeper_season_stats}
-\title{Players stats for goalkeepers in each season}
+\title{Player stats for goalkeepers in each season}
 \format{A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for goalkeepers
 \describe{
 \item{person_id}{the id of the player beginning at 10000}
@@ -34,6 +34,6 @@
 goalkeeper_season_stats
 }
 \description{
-Players stats for goalkeepers in each season
+Player stats for goalkeepers in each season
 }
 \keyword{datasets}
