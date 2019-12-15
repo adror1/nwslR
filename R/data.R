@@ -36,8 +36,8 @@
 #' \describe{
 #' \item{team_id}{the id of team as they appear across all datasets in `nwslR`}
 #' \item{team_name}{name of team}
-#' \item{city}{home state of team}
-#' \item{state}{total number of shot on goal}
+#' \item{city}{home city of team}
+#' \item{state}{home state of team}
 #' \item{season}{season for which the team was active}
 #' }
 #'
@@ -88,3 +88,36 @@
 #' @source \url{https://www.nwslsoccer.com}
 
 "game"
+
+#' Players stats for goalkeepers in each season
+#'
+#' @docType data
+#' @format A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for goalkeepers
+#' \describe{
+#' \item{person_id}{the id of the player beginning at 10000}
+#' \item{season}{season for which the statistics represent}
+#' \item{nation}{nationality of the player}
+#' \item{pos}{position}
+#' \item{team_id}{the id of team as they appear across all datasets in `nwslR`}
+#' \item{mp}{total number of matches the player appeared in}
+#' \item{starts}{total number of matches the player started}
+#' \item{min}{total number of minutes played}
+#' \item{ga}{goals against}
+#' \item{ga_90}{goals against per 90 minutes}
+#' \item{so_ta}{shots on target against}
+#' \item{saves}{total number of saves}
+#' \item{save_pct}{save percentage}
+#' \item{w}{total number of wins}
+#' \item{d}{total number of draws}
+#' \item{l}{total number of losses}
+#' \item{cs}{clean sheets}
+#' \item{cs_pct}{clean sheet percentage}
+#' \item{crd_y}{total number of yellow cards received}
+#' \item{crd_r}{total number of red cards received}
+#'}
+#'
+#' @source \url{https://fbref.com/en/comps/182/keepers/NWSL-Stats}
+#'
+
+"goalkeeper_season_stats"
+
