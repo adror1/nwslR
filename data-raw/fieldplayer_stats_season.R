@@ -139,7 +139,7 @@ goalkeeper_season_stats <- goalkeeper_season_stats %>%
 
 #reorder columns
 goalkeeper_season_stats <- goalkeeper_season_stats[,c(18, 1:17, 19, 20)]
-#need to fix duplicate rows
+#need to fix duplicate rows.
 
 #exporting final GK data
 usethis::use_data(goalkeeper_season_stats, overwrite = TRUE)
