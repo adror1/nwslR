@@ -2,10 +2,10 @@
 % Please edit documentation in R/avg_stats.R
 \name{avg_gk_stats}
 \alias{avg_gk_stats}
-\title{Averages statistics for goalkeepers throughout their careers}
+\title{Averages statistics for goalkeepers throughout their careers by season}
 \usage{
 avg_gk_stats()
 }
 \description{
-Averages statistics for goalkeepers throughout their careers
+Averages statistics for goalkeepers throughout their careers by season
 }
