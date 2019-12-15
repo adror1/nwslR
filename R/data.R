@@ -89,7 +89,7 @@
 
 "game"
 
-#' Players stats for goalkeepers in each season
+#' Player stats for goalkeepers in each season
 #'
 #' @docType data
 #' @format A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for goalkeepers
@@ -121,3 +121,43 @@
 
 "goalkeeper_season_stats"
 
+#' Player stats for field players in each season
+#'
+#' @docType data
+#' @format A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for field players
+#' \describe{
+#' \item{person_id}{the id of the player beginning at 1}
+#' \item{season}{season for which the statistics represent}
+#' \item{nation}{nationality of the player}
+#' \item{pos}{position}
+#' \item{team_id}{the id of team as they appear across all datasets in `nwslR`}
+#' \item{mp}{total number of matches the player appeared in}
+#' \item{starts}{total number of matches the player started}
+#' \item{min}{total number of minutes played}
+#' \item{gls}{goals scored}
+#' \item{ast}{assists}
+#' \item{pk}{penalty kicks made}
+#' \item{p_katt}{penalty kicks attempted}
+#' \item{crd_y}{total number of yellow cards received}
+#' \item{crd_r}{total number of red cards received}
+#'}
+#'
+#' @source \url{https://fbref.com/en/comps/182/keepers/NWSL-Stats}
+#'
+
+"fieldplayer_overall_season_stats"
+
+#' Player information for all players in the National Women's Soccer League (NWSL)
+#'
+#' @docType data
+#' @format A data frame with one row for each player that is currently playing or has played in the NWSL
+#' \describe{
+#' \item{person_id}{the id of the player}
+#' \item{player}{the player's name}
+#' \item{nation}{home city of team}
+#' \item{pos}{home state of team}
+#' }
+#'
+#'
+
+"player"
