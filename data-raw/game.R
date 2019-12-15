@@ -70,7 +70,7 @@ create_df <- function(list_of_stats, vector_of_games) {
            away_pts = away) %>%
     mutate(winner = case_when(home_pts > away_pts ~ home_team,
                               away_pts > home_pts ~ away_team)) %>%
-    mutate(game_date = as.Date(str_extract(game_id, "([[:digit:]]{4})-([[:digit:]]{2})-([[:digit:]]{2})"))) %>%
+    mutate(game_date = str_extract(game_id, "([[:digit:]]{4})-([[:digit:]]{2})-([[:digit:]]{2})")) %>%
     select(game_id, game_date, home_team, away_team, everything())
 
 
@@ -110,5 +110,7 @@ get_results <- function(year) {
 #creates df of all game_ids with information for games played 2016-2019
 game <- map_df(year, get_results)
 
+game <- game %>%
+  mutate(game_date = as.Date(game_date))
 
 usethis::use_data(game, overwrite = TRUE)
