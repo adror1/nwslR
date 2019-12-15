@@ -96,6 +96,9 @@ create_df <- function(list_of_scores, vector_of_games) {
 #' @export
 get_adv_team_stats <- function(year) {
 
+if(year > 2019 | year < 2016){
+  stop("Invalid Year. Please choose a year between 2016-2019.")
+}
   #creates url to access all games in a given year
   game_url <- paste0("https://api.nwsl.aetnd.com/v2/games?limit=150&seasonName=", year,
                      "&project[]=matchInfo.id&project[]=matchInfo.contestant&project[]=matchInfo.date&project[]=matchInfo.time&project[]=liveData.matchDetails.winner&project[]=liveData.matchDetails.matchStatus&project[]=liveData.matchDetails.matchTime&project[]=liveData.matchDetails.periodId&project[]=liveData.matchDetails.scores&project[]=slug")
