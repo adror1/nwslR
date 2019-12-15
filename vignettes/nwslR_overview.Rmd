@@ -1,0 +1,23 @@
+---
+title: "Welcome to nwslR"
+author: "Arielle Dror and Sophia Tannir"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{nwslR_overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(nwslR)
+library(tidyverse)
+```
+This vignette is an introduction to the data and capabilities in `nwslR`. 
+
