@@ -3,5 +3,7 @@ test_that("data correct", {
   expect_identical(game$away_team, na.omit(game$away_team))
   expect_equal(ncol(player), 4)
   expect_s3_class(goalkeeper_season_stats, "data.frame")
+  expect_s3_class(game$game_date, "Date")
+  expect_identical(unique(franchise$team_id), 12)
 }
 )
