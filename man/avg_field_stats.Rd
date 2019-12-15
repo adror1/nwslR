@@ -2,10 +2,10 @@
 % Please edit documentation in R/avg_stats.R
 \name{avg_field_stats}
 \alias{avg_field_stats}
-\title{Averages statistics for field players throughout their careers}
+\title{Averages statistics for field players throughout their careers by season}
 \usage{
 avg_field_stats()
 }
 \description{
-Averages statistics for field players throughout their careers
+Averages statistics for field players throughout their careers by season
 }

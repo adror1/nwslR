@@ -3,3 +3,4 @@
 .Rbuildignore
 .Rhistory
 .github/
+inst/doc

@@ -3,7 +3,7 @@ globalVariables(c("fieldplayer_overall_season_stats", "person_id", "season", "mp
                   "goalkeeper_season_stats", "ga", "ga_90", "so_ta", "saves",
                   "save_pct", "w", "d", "l", "cs", "cs_pct"))
 
-#' Averages statistics for field players throughout their careers
+#' Averages statistics for field players throughout their careers by season
 #' @import dplyr
 #' @export
 avg_field_stats <- function() {
@@ -24,7 +24,7 @@ avg_field_stats <- function() {
       mutate_at(c("mp", "starts", "min", "gls", "ast", "pk", "p_katt", "crd_y", "crd_r"), ~round(., 3))
 }
 
-#' Averages statistics for goalkeepers throughout their careers
+#' Averages statistics for goalkeepers throughout their careers by season
 #' @export
 avg_gk_stats <- function() {
   avg_goalkeeper_stats <- goalkeeper_season_stats %>%

@@ -1,7 +1,7 @@
 Package: nwslR
 Title: Datasets and analysis functions for the National Women's Soccer League (NWSL)
 Version: 0.0.0.9000
-Authors@R:c(
+Authors@R: c(
     person("Arielle", "Dror", email = "adror@smith.edu", role = c("aut", "cre")), 
     person("Sophia", "Tannir", email = "stannir@smith.edu", role = c("aut")))
 Description: What the package does (one paragraph).
@@ -16,8 +16,11 @@ Imports:
     dplyr (>= 0.8.3),
     tidyverse(>= 1.2.1)
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr
