@@ -161,3 +161,17 @@
 #'
 
 "player"
+
+#' Player award history for the National Women's Soccer League (NWSL)
+#'
+#' @docType data
+#' @format A data frame with one row for each award in each season awarded to an NWSL player
+#' \describe{
+#' \item{person_id}{the id of the player}
+#' \item{season}{season in which the award was won}
+#' \item{award}{name of the award}
+#' }
+#'
+#'
+
+"award"
