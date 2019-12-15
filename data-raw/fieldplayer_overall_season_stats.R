@@ -65,7 +65,9 @@ fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
   rename(team_id = squad)
 
-#reordering
+#reordering columns
+fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats[, c(16, 1:4,
+                                                                         7:15)]
 
 #exporting final FP data
 usethis::use_data(fieldplayer_overall_season_stats, overwrite = TRUE)

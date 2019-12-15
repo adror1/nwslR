@@ -105,6 +105,10 @@ goalkeeper_season_stats <- goalkeeper_season_stats %>%
 goalkeeper_season_stats <- goalkeeper_season_stats %>%
   rename_all(.funs = to_any_case)
 
+#renaming team_id
+goalkeeper_season_stats <- goalkeeper_season_stats %>%
+  rename(team_id = squad)
+
 #reorder columns
 goalkeeper_season_stats <- goalkeeper_season_stats[,c(18, 1:17, 19, 20)]
 
