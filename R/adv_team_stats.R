@@ -1,11 +1,17 @@
+globalVariables(c("type", "value", "game_id", "status", "team", "link", "result", "slug"))
+
 #these are helper functions for the scraper
 
 #creates data frame of links/game_ids
 pull_game_links <- function(url) {
 
   link <- fromJSON(url)
-  url_links <- as.data.frame(link[["result"]]$slug)
+  url_links <- link[["result"]][["slug"]]
 
+  url_links <- as.data.frame(url_links)
+
+  url_links <- url_links %>%
+    mutate(url_links = as.character(url_links))
 }
 
 #pulls JSON files for each game with information regarding each game and returns a list
@@ -91,8 +97,6 @@ create_df <- function(list_of_scores, vector_of_games) {
 #' @import dplyr
 #' @import stringr
 #' @import tidyr
-#' @import tidyverse
-#' @import snakecase
 #' @export
 get_adv_team_stats <- function(year) {
 
@@ -105,11 +109,11 @@ if(year > 2019 | year < 2016){
   #gets all game IDs for a given year
   urls_for_boxscores <- pull_game_links(game_url)
 
-  urls_for_boxscores <- urls_for_boxscores %>%
-    rename(slug = `link[["result"]]$slug`)
+  # urls_for_boxscores <- urls_for_boxscores %>%
+  #   rename(slug = url_links)
 
   #game IDs become a vector
-  vector_boxscores <- as.vector(urls_for_boxscores$slug)
+  vector_boxscores <- as.vector(urls_for_boxscores$url_links)
 
   #pulls boxscores for all game IDs and returns a list of list
   boxscores <- map(vector_boxscores, pull_boxscore)
