@@ -110,4 +110,5 @@ get_results <- function(year) {
 #creates df of all game_ids with information for games played 2016-2019
 game <- map_df(year, get_results)
 
+
 usethis::use_data(game, overwrite = TRUE)

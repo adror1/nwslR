@@ -19,7 +19,7 @@
 \item{yellow_cards}{total number of yellow cards received}
 \item{red_cards}{total number of red cards received}
 \item{penalty_kick_goals}{total number of goals scored from penalty kicks}
-\item{penality_kick_attempts}{total number of penalty kicks awarded}
+\item{penalty_kick_attempts}{total number of penalty kicks awarded}
 \item{season}{season for which the statistics represent}
 \item{wins}{number of games won}
 \item{draws}{number of games drawn}

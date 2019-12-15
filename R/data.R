@@ -16,7 +16,7 @@
 #' \item{yellow_cards}{total number of yellow cards received}
 #' \item{red_cards}{total number of red cards received}
 #' \item{penalty_kick_goals}{total number of goals scored from penalty kicks}
-#' \item{penality_kick_attempts}{total number of penalty kicks awarded}
+#' \item{penalty_kick_attempts}{total number of penalty kicks awarded}
 #' \item{season}{season for which the statistics represent}
 #' \item{wins}{number of games won}
 #' \item{draws}{number of games drawn}
@@ -36,7 +36,6 @@
 #' \describe{
 #' \item{team_id}{the id of team as they appear across all datasets in `nwslR`}
 #' \item{team_name}{name of team}
-#' \item{assists}{home city of team}
 #' \item{city}{home state of team}
 #' \item{state}{total number of shot on goal}
 #' \item{season}{season for which the team was active}
@@ -72,3 +71,20 @@
 
 "stadium"
 
+#' Game IDs for all games 2015-2019
+#'
+#' @docType data
+#' @format A dataframe of unique IDs for all games played from 2015-2019 with scores and winners
+#' \describe{
+#' \item{game_id}{unique identifier for each game}
+#' \item{game_date}{day the game was played}
+#' \item{home_team}{home team id}
+#' \item{away_team}{away team id}
+#' \item{home_pts}{number of goals scored by the home team}
+#' \item{away_pts}{number of goals scored by the away team}
+#' \item{winner}{team id for winning team, if applicable. If tied, NA.}
+#' }
+#'
+#' @source \url{https://www.nwslsoccer.com}
+
+"game"

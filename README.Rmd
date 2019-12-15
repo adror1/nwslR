@@ -62,7 +62,7 @@ head(nwslR::franchise, 15)
 ## Functionality
 ```{r, eval=FALSE}
 nwslR::get_adv_team_stats() #scrapes and formats hundreds of advanced team statistics from the NWSL website
-nwslR::get_adv_player_stats() #scrapes and formats advanced individual player stats from the NWSL website
+
 nwslR::player_search() #searches data tables based on player information such as name, nation, or position
 ```
 

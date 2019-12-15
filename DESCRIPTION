@@ -1,14 +1,20 @@
 Package: nwslR
-Title: What the Package Does (One Line, Title Case)
+Title: Datasets and analysis functions for the National Women's Soccer League (NWSL)
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R:c(
+    person("Arielle", "Dror", email = "adror@smith.edu", role = c("aut", "cre")), 
+    person("Sophia", "Tannir", email = "stannir@smith.edu", role = c("aut")))
 Description: What the package does (one paragraph).
 License: GPL-3
+Depends: R (>= 2.10)
+Imports: 
+    purrr (>= 0.2.5),
+    jsonlite (>= 1.5),
+    snakecase (>= 0.11.0),
+    stringr (>= 1.3.1),
+    tidyr (>= 1.0.0),
+    dplyr (>= 0.8.3),
+    tidyverse(>= 1.2.1)
 Suggests: 
     testthat
 Encoding: UTF-8
