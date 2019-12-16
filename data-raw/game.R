@@ -3,6 +3,7 @@
 
 library(jsonlite)
 library(tidyverse)
+library(lubridate)
 
 #all seasons
 year <- c(2015:2019)
@@ -111,6 +112,7 @@ get_results <- function(year) {
 game <- map_df(year, get_results)
 
 game <- game %>%
-  mutate(game_date = as.Date(game_date))
+  mutate(game_date = as.Date(game_date),
+         season = year(game_date))
 
 usethis::use_data(game, overwrite = TRUE)

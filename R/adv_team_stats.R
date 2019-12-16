@@ -1,5 +1,8 @@
 globalVariables(c("type", "value", "game_id", "status", "team", "link", "result", "slug"))
-
+library(dplyr)
+library(purrr)
+library(jsonlite)
+library(snakecase)
 #these are helper functions for the scraper
 
 #creates data frame of links/game_ids
@@ -12,6 +15,8 @@ pull_game_links <- function(url) {
 
   url_links <- url_links %>%
     mutate(url_links = as.character(url_links))
+
+  return(url_links)
 }
 
 #pulls JSON files for each game with information regarding each game and returns a list
@@ -20,6 +25,7 @@ pull_boxscore <- function(game_id) {
   boxscore_link <- paste0("https://api.nwsl.aetnd.com/v2/games/", game_id, "/stats")
   boxscore <- fromJSON(boxscore_link)
 
+  return(boxscore)
 }
 
 #formats row of data frame with pertinent information
@@ -29,32 +35,31 @@ pull_boxscore <- function(game_id) {
 create_df <- function(list_of_scores, vector_of_games) {
 
 #indexes into the list and pulls out the team stats tables
-  home_df_stats <- pluck(list_of_scores, "result", "lineUp", "stat", 1)
-  away_df_stats <- pluck(list_of_scores, "result", "lineUp", "stat", 2)
+  home_df_stats <- purrr::pluck(list_of_scores, "result", "lineUp", "stat", 1)
+  away_df_stats <- purrr::pluck(list_of_scores, "result", "lineUp", "stat", 2)
 
 #row for home team
   home_df_stats <- home_df_stats %>%
-    select(type, value) %>%
-    pivot_wider(value, type) %>%
+    dplyr::select(type, value) %>%
+    tidyr::pivot_wider(value, type) %>%
     mutate(game_id = vector_of_games,
            status = "home",
-           team = str_extract(game_id, "(?<=^)(.+?)(?=-vs)")) %>%
-    mutate(team = case_when(str_detect(team, "portland-thorns") ~ "POR",
-                            str_detect(team, "houston-dash") ~ "HOU",
-                            str_detect(team, "western-new-york-flash") ~ "WNY",
-                            str_detect(team, "kansas-city") ~ "KC",
-                            str_detect(team, "seattle-reign") ~ "SEA",
-                            str_detect(team, "reign") ~ "SEA",
-                            str_detect(team, "chicago-red-stars") ~ "CHI",
-                            str_detect(team, "boston-breakers") ~ "BOS",
-                            str_detect(team, "orlando-pride") ~ "ORL",
-                            str_detect(team, "sky-blue") ~ "NJ",
-                            str_detect(team, "utah-royals") ~ "UTA",
-                            str_detect(team, "north-carolina-courage") ~ "NC",
-                            str_detect(team, "washington-spirit") ~ "WAS"
+           team_id = str_extract(game_id, "(?<=^)(.+?)(?=-vs)")) %>%
+    mutate(team_id = case_when(str_detect(team_id, "portland-thorns") ~ "POR",
+                            str_detect(team_id, "houston-dash") ~ "HOU",
+                            str_detect(team_id, "western-new-york-flash") ~ "WNY",
+                            str_detect(team_id, "kansas-city") ~ "KC",
+                            str_detect(team_id, "seattle-reign") ~ "SEA",
+                            str_detect(team_id, "reign") ~ "SEA",
+                            str_detect(team_id, "chicago-red-stars") ~ "CHI",
+                            str_detect(team_id, "boston-breakers") ~ "BOS",
+                            str_detect(team_id, "orlando-pride") ~ "ORL",
+                            str_detect(team_id, "sky-blue") ~ "NJ",
+                            str_detect(team_id, "utah-royals") ~ "UTA",
+                            str_detect(team_id, "north-carolina-courage") ~ "NC",
+                            str_detect(team_id, "washington-spirit") ~ "WAS"
                             )) %>%
-  select(game_id, status, team, everything())
-
+  select(game_id, status, team_id, everything())
 
 #row for away team
   away_df_stats <- away_df_stats %>%
@@ -62,27 +67,27 @@ create_df <- function(list_of_scores, vector_of_games) {
     pivot_wider(value, type) %>%
     mutate(game_id = vector_of_games,
            status = "away",
-           team = str_extract(game_id, "(?<=vs-)(.*)(?=-[[:digit:]]{4})")) %>%
-    mutate(team = case_when(str_detect(team, "portland-thorns") ~ "POR",
-                            str_detect(team, "houston-dash") ~ "HOU",
-                            str_detect(team, "western-new-york-flash") ~ "WNY",
-                            str_detect(team, "kansas-city") ~ "KC",
-                            str_detect(team, "seattle-reign") ~ "SEA",
-                            str_detect(team, "reign") ~ "SEA",
-                            str_detect(team, "chicago-red-stars") ~ "CHI",
-                            str_detect(team, "boston-breakers") ~ "BOS",
-                            str_detect(team, "orlando-pride") ~ "ORL",
-                            str_detect(team, "sky-blue") ~ "NJ",
-                            str_detect(team, "utah-royals") ~ "UTA",
-                            str_detect(team, "north-carolina-courage") ~ "NC",
-                            str_detect(team, "washington-spirit") ~ "WAS"
+           team_id = str_extract(game_id, "(?<=vs-)(.*)(?=-[[:digit:]]{4})")) %>%
+    mutate(team_id = case_when(str_detect(team_id, "portland-thorns") ~ "POR",
+                            str_detect(team_id, "houston-dash") ~ "HOU",
+                            str_detect(team_id, "western-new-york-flash") ~ "WNY",
+                            str_detect(team_id, "kansas-city") ~ "KC",
+                            str_detect(team_id, "seattle-reign") ~ "SEA",
+                            str_detect(team_id, "reign") ~ "SEA",
+                            str_detect(team_id, "chicago-red-stars") ~ "CHI",
+                            str_detect(team_id, "boston-breakers") ~ "BOS",
+                            str_detect(team_id, "orlando-pride") ~ "ORL",
+                            str_detect(team_id, "sky-blue") ~ "NJ",
+                            str_detect(team_id, "utah-royals") ~ "UTA",
+                            str_detect(team_id, "north-carolina-courage") ~ "NC",
+                            str_detect(team_id, "washington-spirit") ~ "WAS"
     )) %>%
-    select(game_id, status, team, everything())
+    select(game_id, status, team_id, everything())
 
   #combines the two rows and does some cleaning
   full_game_stat <- bind_rows(home_df_stats, away_df_stats) %>%
     rename_all(.funs = to_any_case) %>%
-    mutate_at(vars(-game_id, -status, -team), ~as.numeric(.))
+    mutate_at(vars(-game_id, -status, -team_id), ~as.numeric(.))
 
   #returns two rows
   return(full_game_stat)
@@ -109,21 +114,42 @@ if(year > 2019 | year < 2016){
   #gets all game IDs for a given year
   urls_for_boxscores <- pull_game_links(game_url)
 
-  #game IDs become a vector
-  vector_boxscores <- as.vector(urls_for_boxscores$url_links)
+  #removes the three games in 2017 that do not have team stats
+  if(year == 2017){
 
-  #pulls boxscores for all game IDs and returns a list of list
-  boxscores <- map(vector_boxscores, pull_boxscore)
+    #game IDs become a vector
+    vector_boxscores <- as.vector(urls_for_boxscores$url_links)
 
-  #names the list according to the game_ids
-  names(boxscores) <- vector_boxscores
+    #removes problem games
+    vector_boxscores <- vector_boxscores[!vector_boxscores %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
+                                                                  "houston-dash-vs-seattle-reign-2017-09-03",
+                                                                  "kansas-city-vs-sky-blue-2017-09-03")]
 
+    #pulls boxscores for all game IDs and returns a list of lists
+    boxscores <- map(vector_boxscores, pull_boxscore)
 
-  team_boxscore <- map2_df(boxscores, vector_boxscores, create_df)
+    #names the list according to the game ids
+    names(boxscores) <- vector_boxscores
 
-  team_boxscore[is.na(team_boxscore)] <- 0
+    #creates data frame
+    team_boxscore <- map2_df(boxscores, vector_boxscores, create_df)
 
+    #removes NA values
+    team_boxscore[is.na(team_boxscore)] <- 0
+
+  } else {
+    #same as above, but does not remove any games
+    vector_boxscores <- as.vector(urls_for_boxscores$url_links)
+
+    boxscores <- map(vector_boxscores, pull_boxscore)
+
+    names(boxscores) <- vector_boxscores
+
+    team_boxscore <- map2_df(boxscores, vector_boxscores, create_df)
+
+    team_boxscore[is.na(team_boxscore)] <- 0
+
+  }
 
   return(team_boxscore)
 }
-

@@ -18,7 +18,8 @@ Imports:
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    teamcolors
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
