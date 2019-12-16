@@ -68,6 +68,9 @@ fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
 #reordering columns
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats[, c(16, 1:4,
                                                                          7:15)]
+#correcting data type
+fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
+  mutate(season = as.numeric(season))
 
 #exporting final FP data
 usethis::use_data(fieldplayer_overall_season_stats, overwrite = TRUE)

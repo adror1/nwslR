@@ -7,6 +7,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+This vignette is an introduction to the data and capabilities in `nwslR`.
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -15,9 +16,126 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, message = FALSE, warning = FALSE}
 library(nwslR)
 library(tidyverse)
+library(teamcolors)
 ```
-This vignette is an introduction to the data and capabilities in `nwslR`. 
 
+## About `nwslR`
+`nwslR` is an R package that contains datasets and analysis functionality for the National Women's Soccer League (NWSL). Founded in 2013, the NWSL is the United States' top professional women's soccer league, featuring players from all over the world. 
+
+Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. 
+
+## About the Datasets and Functionality 
+
+The data housed in this package can be sorted into two categories: ID tables, statistics, and functionality. While much of the data is housed directly in `nwslR` itself, there is additional data that can be scraped and analyzed using `nwslR`'s built in functionality. By joining the ID tables with statistics, we can join many datasets/functionality together for analysis. The datasets are as follows:
+
+### ID tables
+* `franchise` is IDs for each team in each year of the league. For example, Portland Thorns FC's unique ID is `POR` and appears once for each year the team was active. 
+* `player` is the IDs for each player who has ever played in any regular season game since the league's inception with their names and their country of origin. The IDs are generated started at 1 for field players and 10000 for goalkeepers. 
+* `game` is the ID for each game played in years 2015-2019 (the remaining years are forthcoming) and the game's scoreline and winner. If there is a draw, then the winner is reported as `NA`. The IDs are structured in the following format: home-team-vs-away-team-date-of-game. 
+* `award` is the winners of league-wide awards (MVP, Golden Boot, Defender of the Year, Goalkeeper of the Year, Rookie of the Year, Best XI, and Second XI) and their person_id. 
+* `stadium` is the primary and secondary (if applicable) stadiums for each team in each season, as well as the average game attendance for the team's home games in a given season. 
+
+### Statistical Tables 
+* `team_stats_season` is a table that shows basic statistics for each team aggregated by season (2016-2019) pulled directly from the NWSL website.  
+* `fieldplayer_overall_season_stats` is a table that shows basic player-level statistics for all field players aggregated by season (2013-2019). 
+* `goalkeeper_season_stats` is a table that shows basic player-level statistics for all goalkeepers aggregated by season (2013-2019).
+
+###Functionality
+* `adv_team_stats` scrapes the NWSL website and returns over 200 variables about team performance boxscores and advanced statistics (2016-2019).
+* `avg_stats` averages player performance over all the seasons throughout their time in the league. 
+* `player_search` allows you to search for a player's season statistics based on any part of their name. 
+
+In order make full use of `nwslR`'s capabilities, it's necessary to use the ID and Statistical tables in tandem. Here are two sample analyses: 
+
+### Analysis One: Built in Datasets 
+
+We want to understand the goalscoring capabilities of the past five Rookie of the Year award recipients: Danielle Colaprico (CRS), Raquel Rodríguez (NJ), Ashley Hatch (NCC), Imani Dorsey (NJ), Bethany Balcer (SEA). 
+
+First, we want to join the `award` table with the `player` table: 
+```{r}
+rookie_winners <- award %>%
+  filter(award == "Rookie of the Year", 
+         season >= 2015)
+
+rookie_winners <- left_join(rookie_winners, player, by = "person_id")
+
+rookie_winners
+```
+
+We can see from the `person_id` that all of these athletes are field players (`person_id` is below 10000). 
+
+Next, we want to join these `person_id`s to their statistics by year. 
+
+```{r}
+rookie_stats <- left_join(rookie_winners, fieldplayer_overall_season_stats, by = c("person_id", "season")) 
+
+rookie_stats <- rookie_stats %>%
+  select(player, season, team_id, gls)
+
+rookie_stats
+```
+
+ First, we need to join our `team_id` column to the `franchise` dataset, so ensure functionality with the `teamcolors` dataset for visualization. This dataset uses the full team name rather than an ID. 
+```{r}
+rookie_team <- left_join(rookie_stats, franchise, by = c("team_id", "season"))
+
+```
+
+Finally, we want to visualize this. 
+
+```{r, fig.height=5, fig.width=7}
+ggplot(rookie_team, aes(x = reorder(player, season), y = gls, fill = team_name)) +
+  geom_bar(stat = "identity") +
+  scale_fill_teams(2) +
+  geom_text(aes(label = season), position = position_dodge(width = 0.9), vjust = -0.25) +
+  labs(x = "Player",
+       y = "Goals Scored",
+       title = "Number of Goals Scored by Rookie of the Year", 
+       fill = "Team") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+As we can see, Ashley Hatch scored the most goals in her rookie season of all Rookie of the Year winners. 
+
+
+### Analysis 2: Utilizing the Scraper
+
+We're curious to know how many total passes the Portland Thorns and North Carolina Courage completed in each game of their 2017 championship seasons.
+
+First, we need to pull the data using the `get_adv_team_stats` function. 
+
+```{r}
+stats_2017 <- get_adv_team_stats(2017)
+
+stats_2017 <- stats_2017 %>%
+  filter(team_id %in% c("POR", "NC")) %>%
+  select(game_id, status, team_id, total_pass)
+
+stats_2017_join <- left_join(stats_2017, game, by = "game_id")
+```
+
+To ensure functionality with `teamcolors`, we now join to our `franchise` dataset.
+
+```{r}
+stats_name <- left_join(stats_2017_join, franchise, by = c("team_id", "season"))
+```
+
+Now, we visualize this information 
+
+```{r, fig.height=5, fig.width=7}
+ggplot(stats_name, aes(x = game_date, y = total_pass, group = team_id, color = team_name)) +
+  geom_line() +
+  scale_color_teams(1) +
+  scale_x_date(date_breaks = "2 weeks") +
+  labs(x = "Date of Game",
+       y = "Total Passes",
+       title = "Total Number of Passes in Each Game", 
+       color = "Team") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+This graph shows that Portland generally had more passes in each game than North Carolina in 2017. 
