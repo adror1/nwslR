@@ -17,20 +17,18 @@ knitr::opts_chunk$set(
 ```
 # nwslR
 
-
-An R package providing users with NWSL player, team, franchise, and stadium data, as well as functionality to glean further data and information. 
+`nwslR` is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world.
+Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open that we could use some help with! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
 
 ## Install 
 
 You can install the current version of nwslR from GitHub using:
 
-```{r}
+```{r, eval=FALSE}
 devtools::install_github("adror1/nwslR")
 ```
 
 ## Load
-
-This is a basic example which shows you how to solve a common problem:
 
 ```{r}
 library(nwslR)
@@ -38,15 +36,19 @@ library(nwslR)
 
 ## Available Tables
 
-`fp_overall_season_stats`: season-by-season data for each NWSL field player
+`award`: dataset of player awards received each season
 
-`goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
-
-`team_stats_season`: season level statistics for each team from the league's inception through present-day
+`fieldplayer_overall_season_stats`: season-by-season data for each NWSL field player
 
 `franchise`: team names, ids, and locations throughout their history in the league
 
+`game`: dataset of `game_id`s and game results that each correspond to an individual game
+
+`goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
+
 `stadium`: historical and current stadium information and statistics
+
+`team_stats_season`: season level statistics for each team from the league's inception through present-day
 
 ## Example: Player Statistics
 
@@ -60,10 +62,11 @@ head(nwslR::franchise, 15)
 ```
 
 ## Functionality
-```{r, eval=FALSE}
-nwslR::get_adv_team_stats() #scrapes and formats hundreds of advanced team statistics from the NWSL website
+```{r}
+#nwslR::get_adv_team_stats() #scrapes and formats hundreds of advanced team statistics from the NWSL website
 
-nwslR::player_search() #searches data tables based on player information such as name, nation, or position
+harris <- nwslR::player_search("Harris", goalkeeper = TRUE)
+head(harris)
 ```
 
 ## Contributors
