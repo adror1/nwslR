@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 # nwslR
 
 `nwslR` is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world.
-Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open that we could use some help with! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
+Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open where we could use some help! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
 
 ## Install 
 
@@ -62,14 +62,18 @@ head(nwslR::franchise, 15)
 ```
 
 ## Functionality
-```{r}
-#nwslR::get_adv_team_stats() #scrapes and formats hundreds of advanced team statistics from the NWSL website
+```{r, eval = FALSE}
+nwslR::get_adv_team_stats(2016) #scrapes and formats hundreds of advanced team statistics from the NWSL website
+```
 
+```{r}
 harris <- nwslR::player_search("Harris", goalkeeper = TRUE)
 head(harris)
 ```
 
+For further examples and capabilities, please see the [vignette]()
+
 ## Contributors
 
-- Arielle Dror
-- Sophia Tannir
+- [Arielle Dror](https://github.com/adror1)
+- [Sophia Tannir](https://github.com/stannir98)
