@@ -3,6 +3,10 @@ output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
+# nwslR <img src='data-raw/hex-nwslR.png' align="right" height="139" />
+
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/nwslR)](https://CRAN.R-project.org/package=nwslR) [![Travis build status](https://travis-ci.org/adror1/nwslR.svg?branch=master)](https://travis-ci.org/adror1/nwslR) <!-- badges: end -->
 
@@ -71,7 +75,7 @@ harris <- nwslR::player_search("Harris", goalkeeper = TRUE)
 head(harris)
 ```
 
-For further examples and capabilities, please see the [vignette]()
+For further examples and capabilities, please see the [vignette](https://github.com/adror1/nwslR/blob/master/vignettes/nwslR_overview.Rmd)
 
 ## Contributors
 
