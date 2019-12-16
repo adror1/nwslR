@@ -13,7 +13,7 @@
 \item{home_pts}{number of goals scored by the home team}
 \item{away_pts}{number of goals scored by the away team}
 \item{winner}{team id for winning team, if applicable. If tied, NA.}
-\season{season}{season that the game was played}
+\item{season}{season that the game was played}
 }}
 \source{
 \url{https://www.nwslsoccer.com}

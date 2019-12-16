@@ -1,8 +1,5 @@
-globalVariables(c("type", "value", "game_id", "status", "team", "link", "result", "slug"))
-library(dplyr)
-library(purrr)
-library(jsonlite)
-library(snakecase)
+globalVariables(c("type", "value", "game_id", "status", "team_id", "link", "result", "slug"))
+
 #these are helper functions for the scraper
 
 #creates data frame of links/game_ids
