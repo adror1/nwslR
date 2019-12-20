@@ -40,19 +40,13 @@ library(nwslR)
 
 ## Available Tables
 
-`award`: dataset of player awards received each season
-
-`fieldplayer_overall_season_stats`: season-by-season data for each NWSL field player
-
-`franchise`: team names, ids, and locations throughout their history in the league
-
-`game`: dataset of `game_id`s and game results that each correspond to an individual game
-
-`goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
-
-`stadium`: historical and current stadium information and statistics
-
-`team_stats_season`: season level statistics for each team from the league's inception through present-day
+- `award`: dataset of player awards received each season
+- `fieldplayer_overall_season_stats`: season-by-season data for each NWSL field player
+- `franchise`: team names, ids, and locations throughout their history in the league
+- `game`: dataset of `game_id`s and game results that each correspond to an individual game
+- `goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
+- `stadium`: historical and current stadium information and statistics
+- `team_stats_season`: season level statistics for each team from the league's inception through present-day
 
 ## Example: Player Statistics
 
