@@ -1,18 +1,33 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-nwslR <img src='man/figures/hex-nwslR.png' align="right" height="139" />
-========================================================================
+
+# nwslR <img src='man/figures/hex-nwslR.png' align="right" height="139" />
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/nwslR)](https://CRAN.R-project.org/package=nwslR) [![Travis build status](https://travis-ci.org/adror1/nwslR.svg?branch=master)](https://travis-ci.org/adror1/nwslR) <!-- badges: end -->
 
-nwslR
-=====
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nwslR)](https://CRAN.R-project.org/package=nwslR)
+[![Travis build
+status](https://travis-ci.org/adror1/nwslR.svg?branch=master)](https://travis-ci.org/adror1/nwslR)
+<!-- badges: end -->
 
-`nwslR` is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world. Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open where we could use some help! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
+# nwslR
 
-Install
--------
+`nwslR` is an R package that contains datasets and analysis
+functionality for the National Women’s Soccer League (NWSL). Founded in
+2013, the NWSL is the United States’ top professional women’s soccer
+league, featuring players from all over the world. Previously, data
+regarding the league has been disparate and often difficult to find. The
+goal of this package is to make it easier for fans and analysts to
+access and engage with all these data in one place. We’re just getting
+started here; we still have a few
+[issues](https://github.com/adror1/nwslR/issues) open where we could use
+some help\! Additionally, if you see anything you’d like added, changed,
+or updated, please open up a new issue of your own.
+
+## Install
 
 You can install the current version of nwslR from GitHub using:
 
@@ -20,50 +35,44 @@ You can install the current version of nwslR from GitHub using:
 devtools::install_github("adror1/nwslR")
 ```
 
-Load
-----
+## Load
 
 ``` r
 library(nwslR)
 ```
 
-Available Tables
-----------------
+## Available Tables
 
-`award`: dataset of player awards received each season
+  - `award`: dataset of player awards received each season
+  - `fieldplayer_overall_season_stats`: season-by-season data for each
+    NWSL field player
+  - `franchise`: team names, ids, and locations throughout their history
+    in the league
+  - `game`: dataset of `game_id`s and game results that each correspond
+    to an individual game
+  - `goalkeeper_season_stats`: season-by-season data for each NWSL
+    goalkeeper
+  - `stadium`: historical and current stadium information and statistics
+  - `team_stats_season`: season level statistics for each team from the
+    league’s inception through present-day
 
-`fieldplayer_overall_season_stats`: season-by-season data for each NWSL field player
-
-`franchise`: team names, ids, and locations throughout their history in the league
-
-`game`: dataset of `game_id`s and game results that each correspond to an individual game
-
-`goalkeeper_season_stats`: season-by-season data for each NWSL goalkeeper
-
-`stadium`: historical and current stadium information and statistics
-
-`team_stats_season`: season level statistics for each team from the league's inception through present-day
-
-Example: Player Statistics
---------------------------
+## Example: Player Statistics
 
 ``` r
 head(nwslR::fieldplayer_overall_season_stats)
 #> # A tibble: 6 x 14
-#>   person_id season nation pos   team_id    mp starts   min   gls   ast
-#>       <int>  <dbl> <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl>
-#> 1       342   2013 " USA" DF    WAS         5      4    NA     0     0
-#> 2       117   2013 " USA" FW,MF NJ         20     20    NA     3     3
-#> 3         6   2013 " ESP" FW    WNY        15     14     3     1    NA
-#> 4       300   2013 " USA" DF,MF KC         22     22  1900     0     5
-#> 5       202   2013 " USA" DF    POR         4      2   212     0     0
-#> 6       202   2013 " USA" DF    BOS        11     11   990     0     1
-#> # … with 4 more variables: pk <dbl>, p_katt <dbl>, crd_y <dbl>,
-#> #   crd_r <dbl>
+#>   person_id season nation pos   team_id    mp starts   min   gls   ast    pk
+#>       <int>  <dbl> <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1       342   2013 " USA" DF    WAS         5      4    NA     0     0     0
+#> 2       117   2013 " USA" FW,MF NJ         20     20    NA     3     3     1
+#> 3         6   2013 " ESP" FW    WNY        15     14     3     1    NA     0
+#> 4       300   2013 " USA" DF,MF KC         22     22  1900     0     5     0
+#> 5       202   2013 " USA" DF    POR         4      2   212     0     0     0
+#> 6       202   2013 " USA" DF    BOS        11     11   990     0     1     0
+#> # … with 3 more variables: p_katt <dbl>, crd_y <dbl>, crd_r <dbl>
 ```
 
-Example: Team IDs
------------------
+## Example: Team IDs
 
 ``` r
 head(nwslR::franchise, 15)
@@ -87,8 +96,7 @@ head(nwslR::franchise, 15)
 #> 15 CHI     Chicago Red Stars      Chicago     IL      2013
 ```
 
-Functionality
--------------
+## Functionality
 
 ``` r
 nwslR::get_adv_team_stats(2016) #scrapes and formats hundreds of advanced team statistics from the NWSL website
@@ -99,23 +107,22 @@ harris <- nwslR::player_search("Harris", goalkeeper = TRUE)
 #> Joining, by = c("person_id", "nation", "pos")
 head(harris)
 #> # A tibble: 6 x 21
-#>   person_id season nation pos   team_id    mp starts   min    ga ga_90
-#>       <dbl> <chr>  <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl>
-#> 1     10007 2013   " USA" GK    WAS        18     18  1620    33 1.83 
-#> 2     10007 2014   " USA" GK    WAS        19     19  1710    31 1.63 
-#> 3     10007 2015   " USA" GK    WAS         9      9   810    12 1.33 
-#> 4     10007 2016   " USA" GK    ORL        15     15  1350    20 1.33 
-#> 5     10007 2017   " USA" GK    ORL        13     13  1106     7 0.570
-#> 6     10007 2018   " USA" GK    ORL        21     21  1890    31 1.48 
-#> # … with 11 more variables: so_ta <dbl>, saves <dbl>, save_pct <dbl>,
-#> #   w <dbl>, d <dbl>, l <dbl>, cs <dbl>, cs_pct <dbl>, crd_y <dbl>,
-#> #   crd_r <dbl>, player <chr>
+#>   person_id season nation pos   team_id    mp starts   min    ga ga_90 so_ta
+#>       <dbl> <chr>  <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1     10007 2013   " USA" GK    WAS        18     18  1620    33 1.83    118
+#> 2     10007 2014   " USA" GK    WAS        19     19  1710    31 1.63     97
+#> 3     10007 2015   " USA" GK    WAS         9      9   810    12 1.33     60
+#> 4     10007 2016   " USA" GK    ORL        15     15  1350    20 1.33     74
+#> 5     10007 2017   " USA" GK    ORL        13     13  1106     7 0.570    NA
+#> 6     10007 2018   " USA" GK    ORL        21     21  1890    31 1.48     NA
+#> # … with 10 more variables: saves <dbl>, save_pct <dbl>, w <dbl>, d <dbl>,
+#> #   l <dbl>, cs <dbl>, cs_pct <dbl>, crd_y <dbl>, crd_r <dbl>, player <chr>
 ```
 
-For further examples and capabilities, please see the [vignette](https://github.com/adror1/nwslR/blob/master/vignettes/nwslR_overview.Rmd)
+For further examples and capabilities, please see the
+[vignette](https://github.com/adror1/nwslR/blob/master/vignettes/nwslR_overview.Rmd)
 
-Contributors
-------------
+## Contributors
 
--   [Arielle Dror](https://github.com/adror1)
--   [Sophia Tannir](https://github.com/stannir98)
+  - [Arielle Dror](https://github.com/adror1)
+  - [Sophia Tannir](https://github.com/stannir98)
