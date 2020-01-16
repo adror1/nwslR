@@ -13,14 +13,14 @@ player_search <- function(name, goalkeeper = FALSE) {
     player_results <- left_join(goalkeeper_season_stats, player)
     #filters the players based on the string entered by the user
     player_results <- player_results %>%
-      filter(grepl(name, player_results$player))
+      filter(grepl(name, player_results$player, ignore.case = TRUE))
   }
   else if (goalkeeper == FALSE) {
     #joins the lookup table with the fieldplayer statistics
     player_results <- left_join(fieldplayer_overall_season_stats, player)
     #filters the players based on the string entered by the user
     player_results <- player_results %>%
-      filter(grepl(name, player_results$player))
+      filter(grepl(name, player_results$player, ignore.case = TRUE))
   }
   return(player_results)
 }
