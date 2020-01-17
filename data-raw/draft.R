@@ -31,9 +31,10 @@ draftpicks <- draftpicks %>%
                                 `Previous Team`, perl=T),
          Notes = na_if(coalesce(Notes,Note),""),
          Round = as.numeric(gsub("[^0-9]","",Round))) %>%
-  select(-Note)
-
-
+  rename(nationality = "Nat.",
+         position = "Pos.") %>%
+  janitor::clean_names("lower_camel") %>%
+  select(year, everything(),-note)
 
 #exporting final draft data
 usethis::use_data(draftpicks, overwrite = TRUE)
