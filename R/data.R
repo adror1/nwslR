@@ -191,6 +191,7 @@
 #' \item{nwslTeam}{team making the pick}
 #' \item{previousTeam}{college and/or previous club side}
 #' \item{notes}{additional notes, indicating a pick was obtained via trade or other means}
+#' \item{person_id}{the id of the player}
 #' }
 
 "draftpicks"
