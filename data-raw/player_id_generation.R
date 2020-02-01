@@ -81,5 +81,31 @@ player_ids <- player_ids %>%
   rename_all(.funs = to_any_case)
 player <- player_ids
 
+#sometimes the NWSL or FB Ref has different names for players, those are denoted here
+player <- player %>%
+  mutate(name_other = case_when(player == 	"Sam Mewis"	~	"Samantha Mewis",
+                                player == 	"Kendall Fletcher"	~	"Kendall Lorraine Fletcher",
+                                player == 	"Jess Fishlock"	~	"Jessica Fishlock",
+                                player == 	"Line Jensen"	~	"Line Sigvardsen Jensen",
+                                player == 	"Sam Lofton"	~	"Samantha Lofton",
+                                player == 	"Libby Stout"	~	"Elizabeth Stout",
+                                player == 	"Leah Fortune"	~	"Leah Lynn Gabriela Fortune",
+                                player == 	"Katie Naughton"	~	"Kathleen Naughton",
+                                player == 	"CoCo Goodson"	~	"Courtney Kathryn 'Coco' Goodson",
+                                player == 	"Jillian Loyden"	~	"Jillian Ann Loyden",
+                                player == 	"Lady Andrade"	~	"Lady Patricia Andrade Rodríguez",
+                                player == 	"Halimatu Ayinde"	~	"Halimatu Ibrahim Ayinde",
+                                player == 	"Jeon Ga-eul"	~	"Ga-Eul Jeon",
+                                player == 	"DiDi Haracic"	~	"Dijana Haracic",
+                                player == 	"Maddie Bauer"	~	"Madeline Bauer",
+                                player == 	"Katie Johnson"	~	"Katlyn Johnson",
+                                player == 	"Margaret Purce"	~	"Midge Purce",
+                                player == 	"Sammy Prudhomme"	~	"Sammy Jo Prudhomme",
+                                player == 	"Bruna"	~	"Bruna Benites",
+                                player == 	"Crystal Thomas"	~	"Crystal Elaine Thomas",
+                                player == 	"Thaisa"	~	"Thaisa Moreno",
+                                player == 	"Arianna Romero"	~	"Ari Romero",
+                                player == 	"Celia Jiménez"	~	"Celia"))
+
 #exporting final player info
 usethis::use_data(player, overwrite = TRUE)

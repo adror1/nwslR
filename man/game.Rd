@@ -20,8 +20,12 @@
 }
 \usage{
 game
+
+game
 }
 \description{
 Game IDs for all games 2015-2019
+
+Results of all games played 2015-2019 in the National Women's Soccer League (NWSL)
 }
 \keyword{datasets}
