@@ -10,6 +10,7 @@
 \item{player}{the player's name}
 \item{nation}{home city of team}
 \item{pos}{home state of team}
+\item{name_other}{nicknames, other names that player uses, etc.}
 }}
 \usage{
 player
