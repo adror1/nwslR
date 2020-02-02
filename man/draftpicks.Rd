@@ -10,13 +10,15 @@ Wikipedia (16 Jan 2020)
 \describe{
 \item{year}{Year of the draft}
 \item{round}{Round of the draft}
-\item{nationality}{Player's home country}
+\item{pick}{Overall selection number}
+\item{nation}{Player's home country}
 \item{player}{player name}
-\item{position}{position(s) declared}
-\item{nwslTeam}{team making the pick}
-\item{previousTeam}{college and/or previous club side}
+\item{pos}{position(s) declared}
+\item{team_name}{team making the pick}
+\item{previous_team}{college and/or previous club side}
 \item{notes}{additional notes, indicating a pick was obtained via trade or other means}
 \item{person_id}{the id of the player}
+\item{team_id}{the id of team as they appear across all datasets in \code{nwslR}}
 }
 }
 \usage{
