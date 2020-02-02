@@ -42,7 +42,11 @@ draftpicks <- draftpicks %>%
 
 draftpicks <- draftpicks %>%
   mutate(nwslTeam = gsub("\\[.+\\]","",nwslTeam)) %>%
-  rename(team_name = nwslTeam)
+  rename(team_name = nwslTeam,
+         nation = nationality, pos = position,
+         previous_team = previousTeam
+         ) %>%
+  left_join(distinct(franchise, team_id, team_name), by = "team_name")
 
 #exporting final draft data
 usethis::use_data(draftpicks, overwrite = TRUE)
@@ -58,7 +62,8 @@ withID <- draftpicks %>%
 potentialMatches <- withID %>%
   filter(is.na(person_id),
          year != max(year)) %>%
-  transmute(player, nationality,position,
+  transmute(player, nation, pos,
+            previous_team,
             last = stringr::str_extract(player,"[A-Z]\\w+$")) %>%
   left_join(player %>% mutate(last = stringr::str_extract(player,"[A-Z]\\w+$")), by = "last", suffix = c(".draft",".id"))
 
