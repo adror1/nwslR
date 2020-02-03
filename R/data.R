@@ -157,6 +157,7 @@
 #' \item{player}{the player's name}
 #' \item{nation}{home city of team}
 #' \item{pos}{home state of team}
+#' \item{name_other}{nicknames, other names that player uses, etc.}
 #' }
 #'
 #'
@@ -176,6 +177,7 @@
 #'
 
 "award"
+
 
 #' National Women's Soccer League (NWSL) Draft Picks since 2013
 #'
@@ -197,3 +199,272 @@
 #' }
 
 "draftpicks"
+
+#' Results of all games played 2015-2019 in the National Women's Soccer League (NWSL)
+#'
+#' @docType data
+#' @format A data frame with one row for each game played
+#' \describe{
+#' \item{game_id}{unique game id in the follow format: "home-team-vs-away-team_YYYY-MM-DD}
+#' \item{game_date}{date game was played}
+#' \item{home_team}{home team unique ID}
+#' \item{away_team}{away team unique ID}
+#' \item{home_pts}{points scored by home team}
+#' \item{away_pts}{points scored by the away team}
+#' \item{winnter}{team ID for winning team (NA if draw)}
+#' \item{season}{season game was played}
+#' }
+#'
+#'
+"game"
+
+
+#' Team statistics for each game in the National Women's Soccer League (NWSL) during 2016-2019
+#'
+#' @docType data
+#' @format A data frame with one row for each team in each game (i.e. each game has two rows, one for an away team and one for a home team). Note: variables are currently undocumented.
+#' \describe{
+#' \item{game_id}{unique game id in the follow format: "home-team-vs-away-team_YYYY-MM-DD}
+#' \item{season}{year game was played}
+#' \item{status}{home/away team observations}
+#' \item{team_id}{the id for the team}
+#' \item{total_through_ball}{}
+#' \item{duel_lost}{}
+#' \item{blocked_scoring_att}{}
+#' \item{leftside_pass}{}
+#' \item{poss_won_att_3_rd}{}
+#' \item{dispossessed}{}
+#' \item{accurate_keeper_sweeper}{}
+#' \item{accurate_cross}{}
+#' \item{att_rf_total}{}
+#' \item{att_bx_right}{}
+#' \item{six_yard_block}{}
+#' \item{accurate_pass}{}
+#' \item{won_tackle}{}
+#' \item{att_assist_setplay}{}
+#' \item{att_goal_high_centre}{}
+#' \item{att_miss_left}{}
+#' \item{total_final_third_passes}{}
+#' \item{rightside_pass}{}
+#' \item{attempts_conceded_ibox}{}
+#' \item{touches}{}
+#' \item{total_fwd_zone_pass}{}
+#' \item{att_assist_openplay}{}
+#' \item{won_contest}{}
+#' \item{goals_openplay}{}
+#' \item{accurate_fwd_zone_pass}{}
+#' \item{total_chipped_pass}{}
+#' \item{lost_corners}{}
+#' \item{fouled_final_third}{}
+#' \item{saves}{}
+#' \item{ontarget_scoring_att}{}
+#' \item{total_scoring_att}{}
+#' \item{blocked_pass}{}
+#' \item{attempts_conceded_obox}{}
+#' \item{ball_recovery}{}
+#' \item{subs_made}{}
+#' \item{att_ibox_post}{}
+#' \item{poss_won_def_3_rd}{}
+#' \item{accurate_back_zone_pass}{}
+#' \item{att_cmiss_left}{}
+#' \item{att_goal_low_centre}{}
+#' \item{goal_assist_openplay}{}
+#' \item{passes_right}{}
+#' \item{total_throws}{}
+#' \item{att_obox_target}{}
+#' \item{successful_open_play_pass}{}
+#' \item{goal_assist_setplay}{}
+#' \item{total_back_zone_pass}{}
+#' \item{total_long_balls}{}
+#' \item{att_hd_goal}{}
+#' \item{accurate_keeper_throws}{}
+#' \item{att_obx_centre}{}
+#' \item{att_openplay}{}
+#' \item{poss_won_mid_3_rd}{}
+#' \item{put_through}{}
+#' \item{big_chance_created}{}
+#' \item{att_ibox_target}{}
+#' \item{freekick_cross}{}
+#' \item{att_freekick_total}{}
+#' \item{goal_kicks}{}
+#' \item{att_lf_total}{}
+#' \item{open_play_pass}{}
+#' \item{goal_assist_intentional}{}
+#' \item{aerial_won}{}
+#' \item{goal_assist}{}
+#' \item{total_pass}{}
+#' \item{midfielder_goals}{}
+#' \item{total_launches}{}
+#' \item{fwd_pass}{}
+#' \item{effective_blocked_cross}{}
+#' \item{outfielder_block}{}
+#' \item{att_miss_high_left}{}
+#' \item{goals}{}
+#' \item{touches_in_opp_box}{}
+#' \item{total_corners_intobox}{}
+#' \item{blocked_cross}{}
+#' \item{att_miss_right}{}
+#' \item{att_bx_centre}{}
+#' \item{post_scoring_att}{}
+#' \item{ontarget_att_assist}{}
+#' \item{long_pass_own_to_opp}{}
+#' \item{att_ibox_goal}{}
+#' \item{accurate_chipped_pass}{}
+#' \item{duel_won}{}
+#' \item{total_keeper_sweeper}{}
+#' \item{successful_final_third_passes}{}
+#' \item{att_rf_goal}{}
+#' \item{shield_ball_oop}{}
+#' \item{fk_foul_won}{}
+#' \item{total_cross_nocorner}{}
+#' \item{keeper_throws}{}
+#' \item{att_bx_left}{}
+#' \item{successful_put_through}{}
+#' \item{total_tackle}{}
+#' \item{att_sv_low_left}{}
+#' \item{passes_left}{}
+#' \item{big_chance_scored}{}
+#' \item{att_rf_target}{}
+#' \item{att_cmiss_high_left}{}
+#' \item{accurate_launches}{}
+#' \item{poss_lost_all}{}
+#' \item{att_sv_low_centre}{}
+#' \item{accurate_long_balls}{}
+#' \item{challenge_lost}{}
+#' \item{total_cross}{}
+#' \item{att_goal_low_right}{}
+#' \item{clean_sheet}{}
+#' \item{att_obox_blocked}{}
+#' \item{att_ibox_miss}{}
+#' \item{accurate_goal_kicks}{}
+#' \item{saved_obox}{}
+#' \item{unsuccessful_touch}{}
+#' \item{shot_off_target}{}
+#' \item{forward_goals}{}
+#' \item{poss_lost_ctrl}{}
+#' \item{hand_ball}{}
+#' \item{goal_assist_deadball}{}
+#' \item{att_ibox_blocked}{}
+#' \item{aerial_lost}{}
+#' \item{att_sv_low_right}{}
+#' \item{crosses_18_yard}{}
+#' \item{final_third_entries}{}
+#' \item{att_hd_total}{}
+#' \item{accurate_cross_nocorner}{}
+#' \item{effective_clearance}{}
+#' \item{fk_foul_lost}{}
+#' \item{att_hd_miss}{}
+#' \item{won_corners}{}
+#' \item{possession_percentage}{}
+#' \item{interception}{}
+#' \item{attempted_tackle_foul}{}
+#' \item{backward_pass}{}
+#' \item{first_half_goals}{}
+#' \item{interception_won}{}
+#' \item{pen_area_entries}{}
+#' \item{att_lf_goal}{}
+#' \item{accurate_throws}{}
+#' \item{big_chance_missed}{}
+#' \item{accurate_freekick_cross}{}
+#' \item{att_hd_target}{}
+#' \item{total_contest}{}
+#' \item{hit_woodwork}{}
+#' \item{total_clearance}{}
+#' \item{long_pass_own_to_opp_success}{}
+#' \item{accurate_corners_intobox}{}
+#' \item{total_att_assist}{}
+#' \item{att_post_left}{}
+#' \item{att_setpiece}{}
+#' \item{offtarget_att_assist}{}
+#' \item{att_obox_miss}{}
+#' \item{corner_taken}{}
+#' \item{crosses_18_yardplus}{}
+#' \item{formation_used}{}
+#' \item{total_shots}{}
+#' \item{passing_accuracy}{}
+#' \item{shot_faced}{}
+#' \item{shots_on_goal}{}
+#' \item{total_flick_on}{}
+#' \item{diving_save}{}
+#' \item{att_freekick_miss}{}
+#' \item{goals_conceded}{}
+#' \item{att_lg_centre}{}
+#' \item{total_high_claim}{}
+#' \item{error_lead_to_goal}{}
+#' \item{goals_conceded_ibox}{}
+#' \item{interceptions_in_box}{}
+#' \item{total_offside}{}
+#' \item{good_high_claim}{}
+#' \item{saved_ibox}{}
+#' \item{att_miss_high}{}
+#' \item{att_sv_high_centre}{}
+#' \item{effective_head_clearance}{}
+#' \item{accurate_flick_on}{}
+#' \item{accurate_layoffs}{}
+#' \item{total_yellow_card}{}
+#' \item{head_clearance}{}
+#' \item{att_lf_target}{}
+#' \item{att_cmiss_right}{}
+#' \item{att_sv_high_left}{}
+#' \item{att_freekick_target}{}
+#' \item{overrun}{}
+#' \item{total_layoffs}{}
+#' \item{total_pull_back}{}
+#' \item{att_miss_high_right}{}
+#' \item{accurate_through_ball}{}
+#' \item{clearance_off_line}{}
+#' \item{att_post_high}{}
+#' \item{att_cmiss_high}{}
+#' \item{att_goal_low_left}{}
+#' \item{att_sv_high_right}{}
+#' \item{att_obxd_right}{}
+#' \item{pts_gained_losing_pos}{}
+#' \item{att_cmiss_high_right}{}
+#' \item{goals_conceded_obox}{}
+#' \item{att_obox_goal}{}
+#' \item{pts_dropped_winning_pos}{}
+#' \item{error_lead_to_shot}{}
+#' \item{att_goal_high_right}{}
+#' \item{penalty_conceded}{}
+#' \item{penalty_faced}{}
+#' \item{att_obx_right}{}
+#' \item{pen_goals_conceded}{}
+#' \item{att_pen_goal}{}
+#' \item{att_goal_high_left}{}
+#' \item{penalty_won}{}
+#' \item{punches}{}
+#' \item{own_goal_accrued}{}
+#' \item{att_ibox_own_goal}{}
+#' \item{own_goals}{}
+#' \item{att_obox_post}{}
+#' \item{second_yellow}{}
+#' \item{total_red_card}{}
+#' \item{defender_goals}{}
+#' \item{att_one_on_one}{}
+#' \item{att_freekick_post}{}
+#' \item{att_pen_post}{}
+#' \item{att_post_right}{}
+#' \item{contentious_decision}{}
+#' \item{att_obxd_left}{}
+#' \item{att_hd_post}{}
+#' \item{foul_throw_in}{}
+#' \item{att_lg_left}{}
+#' \item{att_fastbreak}{}
+#' \item{shot_fastbreak}{}
+#' \item{total_fastbreak}{}
+#' \item{att_obx_left}{}
+#' \item{accurate_pull_back}{}
+#' \item{att_freekick_goal}{}
+#' \item{last_man_tackle}{}
+#' \item{attempts_obox}{}
+#' \item{attempts_ibox}{}
+#' \item{att_pen_miss}{}
+#' \item{goal_fastbreak}{}
+#' \item{att_obp_goal}{}
+#' \item{penalty_save}{}
+#' \item{att_pen_target}{}
+#' \item{att_lg_right}{}
+#' \item{att_corner}{}
+#' }
+#'
+"adv_team_stats"
