@@ -61,7 +61,7 @@ head(nwslR::franchise, 15)
 
 ## Functionality
 ```{r, eval = FALSE}
-nwslR::get_adv_team_stats(2016) #scrapes and formats hundreds of advanced team statistics from the NWSL website
+adv_team_stats #scrapes and formats hundreds of advanced team statistics from the NWSL website
 ```
 
 ```{r}
