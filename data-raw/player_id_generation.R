@@ -4,6 +4,7 @@ library(readr)
 library(readxl)
 library(fs)
 library(snakecase)
+library(stringr)
 
 ##loading in field player stats
 
@@ -105,7 +106,8 @@ player <- player %>%
                                 player == 	"Crystal Thomas"	~	"Crystal Elaine Thomas",
                                 player == 	"Thaisa"	~	"Thaisa Moreno",
                                 player == 	"Arianna Romero"	~	"Ari Romero",
-                                player == 	"Celia Jiménez"	~	"Celia"))
+                                player == 	"Celia Jiménez"	~	"Celia"),
+         nation = str_replace_all(nation, " ", ""))
 
 #exporting final player info
 usethis::use_data(player, overwrite = TRUE)
