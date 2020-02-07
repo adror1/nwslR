@@ -4,6 +4,7 @@ library(readr)
 library(readxl)
 library(fs)
 library(snakecase)
+library(stringr)
 
 ##loading in goalkeeper stats
 
@@ -112,6 +113,9 @@ goalkeeper_season_stats <- goalkeeper_season_stats %>%
 #reorder columns
 goalkeeper_season_stats <- goalkeeper_season_stats[,c(18, 1:17, 19, 20)]
 
+#fix nation column
+goalkeeper_season_stats <- goalkeeper_season_stats %>%
+  mutate(nation = str_replace_all(nation, " ", ""))
 
 #exporting final GK data
 usethis::use_data(goalkeeper_season_stats, overwrite = TRUE)

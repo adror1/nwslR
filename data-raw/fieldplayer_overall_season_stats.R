@@ -4,7 +4,7 @@ library(readr)
 library(readxl)
 library(fs)
 library(snakecase)
-
+library(stringr)
 ##loading in field player stats
 
 #vector of field player filenames
@@ -71,6 +71,10 @@ fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats[, c(16, 1:4
 #correcting data type
 fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
   mutate(season = as.numeric(season))
+
+#fixing nation column
+fieldplayer_overall_season_stats <- fieldplayer_overall_season_stats %>%
+  mutate(nation = str_replace_all(nation, " ", ""))
 
 #exporting final FP data
 usethis::use_data(fieldplayer_overall_season_stats, overwrite = TRUE)
