@@ -228,43 +228,43 @@
 #' \item{season}{year game was played}
 #' \item{status}{home/away team observations}
 #' \item{team_id}{the id for the team}
-#' \item{total_through_ball}{}
-#' \item{duel_lost}{}
-#' \item{blocked_scoring_att}{}
-#' \item{leftside_pass}{}
-#' \item{poss_won_att_3_rd}{}
-#' \item{dispossessed}{}
-#' \item{accurate_keeper_sweeper}{}
-#' \item{accurate_cross}{}
+#' \item{total_through_ball}{total passes splitting the defense for a teammate to run on to}
+#' \item{duel_lost}{number of 50/50 contests lost}
+#' \item{blocked_scoring_att}{blocked scoring attempt that is on target}
+#' \item{leftside_pass}{number of passes originating on left side of the field}
+#' \item{poss_won_att_3_rd}{possession won in the attacking third of the field}
+#' \item{dispossessed}{a player in possession of the ball has the ball taken (tackle)}
+#' \item{accurate_keeper_sweeper}{number of times a goalkeeper anticipates danger and rushes off their line to try to either cut out an attacking pass (in a race with the opposition player) or to close-down an opposing player}
+#' \item{accurate_cross}{ball played from a wide position intending to reach a teammate in a specific area in front of the goal}
 #' \item{att_rf_total}{}
 #' \item{att_bx_right}{}
-#' \item{six_yard_block}{}
-#' \item{accurate_pass}{}
-#' \item{won_tackle}{}
+#' \item{six_yard_block}{blocks in the six yard box}
+#' \item{accurate_pass}{passes completed from one player to another}
+#' \item{won_tackle}{number of tackles won}
 #' \item{att_assist_setplay}{}
-#' \item{att_goal_high_centre}{}
-#' \item{att_miss_left}{}
-#' \item{total_final_third_passes}{}
-#' \item{rightside_pass}{}
-#' \item{attempts_conceded_ibox}{}
-#' \item{touches}{}
+#' \item{att_goal_high_centre}{attempts that result in goal, placement high center}
+#' \item{att_miss_left}{attempts on goal that miss left}
+#' \item{total_final_third_passes}{sum of final third passes}
+#' \item{rightside_pass}{number of passes originating on right side of the field}
+#' \item{attempts_conceded_ibox}{attempts on goal conceded in box}
+#' \item{touches}{a sum of all events where a player touches the ball}
 #' \item{total_fwd_zone_pass}{}
 #' \item{att_assist_openplay}{}
 #' \item{won_contest}{}
-#' \item{goals_openplay}{}
+#' \item{goals_openplay}{goals scored in open play}
 #' \item{accurate_fwd_zone_pass}{}
-#' \item{total_chipped_pass}{}
+#' \item{total_chipped_pass}{total number of chipped passes}
 #' \item{lost_corners}{}
-#' \item{fouled_final_third}{}
-#' \item{saves}{}
-#' \item{ontarget_scoring_att}{}
-#' \item{total_scoring_att}{}
-#' \item{blocked_pass}{}
+#' \item{fouled_final_third}{number of fouls in the final third}
+#' \item{saves}{total number of saves by the goalkeeper}
+#' \item{ontarget_scoring_att}{scoring attempts on target}
+#' \item{total_scoring_att}{total number of scoring attempts}
+#' \item{blocked_pass}{blocked passes}
 #' \item{attempts_conceded_obox}{}
 #' \item{ball_recovery}{}
-#' \item{subs_made}{}
+#' \item{subs_made}{number of substitutions made}
 #' \item{att_ibox_post}{}
-#' \item{poss_won_def_3_rd}{}
+#' \item{poss_won_def_3_rd}{possession won in defensive third}
 #' \item{accurate_back_zone_pass}{}
 #' \item{att_cmiss_left}{}
 #' \item{att_goal_low_centre}{}
@@ -292,7 +292,7 @@
 #' \item{goal_assist_intentional}{}
 #' \item{aerial_won}{}
 #' \item{goal_assist}{}
-#' \item{total_pass}{}
+#' \item{total_pass}{total number of passes}
 #' \item{midfielder_goals}{}
 #' \item{total_launches}{}
 #' \item{fwd_pass}{}
