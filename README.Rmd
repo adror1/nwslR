@@ -24,6 +24,8 @@ knitr::opts_chunk$set(
 `nwslR` is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world.
 Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open where we could use some help! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
 
+This package is currently in the process of changing and updating significantly, so it is suggested that you frequently update it so that you have access to the most recent version. 
+
 ## Install 
 
 You can install the current version of nwslR from GitHub using:
@@ -61,7 +63,17 @@ head(nwslR::franchise, 15)
 
 ## Functionality
 ```{r, eval = FALSE}
-adv_team_stats #scrapes and formats hundreds of advanced team statistics from the NWSL website
+adv_team_stats #scraped and formatted dataset of hundreds of advanced team statistics from the NWSL website
+```
+
+NOTE: `adv_team_stats` will soon be deprecated. Instead, use `get_adv_team_stats`. 
+
+To use this function, you need to find the `game_id` for a given game. 
+
+![These are available in the `game` table (updated periodically throughout the season) or by looking on the NWSL website.](man/figures/game_id_ex.png)
+
+```{r, eval = FALSE}
+get_adv_team_stats("utah_royals-vs-washington-spirit-2019-04-20")
 ```
 
 ```{r}

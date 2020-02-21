@@ -75,11 +75,11 @@ create_df <- function(boxscore, game_id) {
   return(full_game_stat)
 }
 
-#' Advanced team stats for each game 
+#' Advanced team-level statistics by game 
 #' 
 #' Scrapes NWSL website to pull team stats for each game. Returns a data frame with two rows for each
 #' game ID (home and away) as well as up to 200 different statistics depending on the game
-#' @param game_id unique game id from nwsl. find these on the nwsl website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in our `game` table. 
+#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in our `game` table. 
 #' @importFrom jsonlite fromJSON
 #' @importFrom snakecase to_any_case
 #' @import purrr

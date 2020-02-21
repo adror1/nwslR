@@ -2,12 +2,12 @@
 % Please edit documentation in R/get_adv_team_stats.R
 \name{get_adv_team_stats}
 \alias{get_adv_team_stats}
-\title{Advanced team stats for each game}
+\title{Advanced team-level statistics by game}
 \usage{
 get_adv_team_stats(game_id)
 }
 \arguments{
-\item{game_id}{unique game id from nwsl. find these on the nwsl website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in our \code{game} table.}
+\item{game_id}{Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in our \code{game} table.}
 }
 \description{
 Scrapes NWSL website to pull team stats for each game. Returns a data frame with two rows for each
