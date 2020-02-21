@@ -231,122 +231,122 @@
 #' \item{total_through_ball}{total passes splitting the defense for a teammate to run on to}
 #' \item{duel_lost}{number of 50/50 contests lost}
 #' \item{blocked_scoring_att}{blocked scoring attempt that is on target}
-#' \item{leftside_pass}{number of passes originating on left side of the field}
-#' \item{poss_won_att_3_rd}{possession won in the attacking third of the field}
-#' \item{dispossessed}{a player in possession of the ball has the ball taken (tackle)}
-#' \item{accurate_keeper_sweeper}{number of times a goalkeeper anticipates danger and rushes off their line to try to either cut out an attacking pass (in a race with the opposition player) or to close-down an opposing player}
+#' \item{leftside_pass}{a pass to a player on the left hand side of the pitch in the opposition half}
+#' \item{poss_won_att_3_rd}{total number of times possession was regained in the attacking third of the field}
+#' \item{dispossessed}{player is dispossessed on the ball by an opponent – no dribble involved}
+#' \item{accurate_keeper_sweeper}{goalkeeper comes off her line, wins the ball and wins possession for her team}
 #' \item{accurate_cross}{ball played from a wide position intending to reach a teammate in a specific area in front of the goal}
-#' \item{att_rf_total}{}
-#' \item{att_bx_right}{}
-#' \item{six_yard_block}{blocks in the six yard box}
-#' \item{accurate_pass}{passes completed from one player to another}
-#' \item{won_tackle}{number of tackles won}
-#' \item{att_assist_setplay}{}
-#' \item{att_goal_high_centre}{attempts that result in goal, placement high center}
-#' \item{att_miss_left}{attempts on goal that miss left}
-#' \item{total_final_third_passes}{sum of final third passes}
-#' \item{rightside_pass}{number of passes originating on right side of the field}
+#' \item{att_rf_total}{total right-footed shots}
+#' \item{att_bx_right}{shot from the right of the box}
+#' \item{six_yard_block}{a shot blocked from an attempt inside the six-yard box}
+#' \item{accurate_pass}{passes completed from one player to another (excluding throw-ins, keeper throws and crosses)}
+#' \item{won_tackle}{total tackles won by the team (winning possession or putting the ball out of play)}
+#' \item{att_assist_setplay}{number of indirect free kicks attempted}
+#' \item{att_goal_high_centre}{attempt that result in goal, placement high center}
+#' \item{att_miss_left}{attempt on goal that miss left}
+#' \item{total_final_third_passes}{total number of passes (successful or unsuccessful) where ball ends in the final third of the pitch}
+#' \item{rightside_pass}{a pass to a player on the right hand side of the pitch in the opposition half}
 #' \item{attempts_conceded_ibox}{attempts on goal conceded in box}
-#' \item{touches}{a sum of all events where a player touches the ball}
-#' \item{total_fwd_zone_pass}{}
-#' \item{att_assist_openplay}{}
-#' \item{won_contest}{}
+#' \item{touches}{total sum of a team’s on-the-ball events}
+#' \item{total_fwd_zone_pass}{total number of passes that end in the opposition half}
+#' \item{att_assist_openplay}{a shot assist from an open play situation}
+#' \item{won_contest}{total dribbles where a team player beats an opponent }
 #' \item{goals_openplay}{goals scored in open play}
-#' \item{accurate_fwd_zone_pass}{}
-#' \item{total_chipped_pass}{total number of chipped passes}
-#' \item{lost_corners}{}
-#' \item{fouled_final_third}{number of fouls in the final third}
+#' \item{accurate_fwd_zone_pass}{an accurate pass that ends in the attacking half of the pitch}
+#' \item{total_chipped_pass}{total number of passes (successful or unsuccessful) which are lofted into the air and not along the ground – does not include crosses}
+#' \item{lost_corners}{corner conceded}
+#' \item{fouled_final_third}{number of fouls in the attacking final third}
 #' \item{saves}{total number of saves by the goalkeeper}
-#' \item{ontarget_scoring_att}{scoring attempts on target}
-#' \item{total_scoring_att}{total number of scoring attempts}
+#' \item{ontarget_scoring_att}{shot on target (i.e. applies for a shot that was not blocked, and did not hit woodwork, but may have been saved off the line by a player on the defending team}
+#' \item{total_scoring_att}{total number of shots at goal (excludes own goals)}
 #' \item{blocked_pass}{blocked passes}
-#' \item{attempts_conceded_obox}{}
-#' \item{ball_recovery}{}
+#' \item{attempts_conceded_obox}{an attempt conceded from a shot from outside the box}
+#' \item{ball_recovery}{a player takes possession of a loose ball}
 #' \item{subs_made}{number of substitutions made}
-#' \item{att_ibox_post}{}
-#' \item{poss_won_def_3_rd}{possession won in defensive third}
-#' \item{accurate_back_zone_pass}{}
-#' \item{att_cmiss_left}{}
-#' \item{att_goal_low_centre}{}
-#' \item{goal_assist_openplay}{}
-#' \item{passes_right}{}
-#' \item{total_throws}{}
-#' \item{att_obox_target}{}
-#' \item{successful_open_play_pass}{}
-#' \item{goal_assist_setplay}{}
-#' \item{total_back_zone_pass}{}
-#' \item{total_long_balls}{}
-#' \item{att_hd_goal}{}
-#' \item{accurate_keeper_throws}{}
-#' \item{att_obx_centre}{}
-#' \item{att_openplay}{}
-#' \item{poss_won_mid_3_rd}{}
-#' \item{put_through}{}
-#' \item{big_chance_created}{}
-#' \item{att_ibox_target}{}
-#' \item{freekick_cross}{}
-#' \item{att_freekick_total}{}
-#' \item{goal_kicks}{}
-#' \item{att_lf_total}{}
-#' \item{open_play_pass}{}
-#' \item{goal_assist_intentional}{}
-#' \item{aerial_won}{}
-#' \item{goal_assist}{}
-#' \item{total_pass}{total number of passes}
-#' \item{midfielder_goals}{}
-#' \item{total_launches}{}
-#' \item{fwd_pass}{}
-#' \item{effective_blocked_cross}{}
-#' \item{outfielder_block}{}
-#' \item{att_miss_high_left}{}
-#' \item{goals}{}
-#' \item{touches_in_opp_box}{}
-#' \item{total_corners_intobox}{}
-#' \item{blocked_cross}{}
-#' \item{att_miss_right}{}
-#' \item{att_bx_centre}{}
-#' \item{post_scoring_att}{}
-#' \item{ontarget_att_assist}{}
-#' \item{long_pass_own_to_opp}{}
-#' \item{att_ibox_goal}{}
-#' \item{accurate_chipped_pass}{}
-#' \item{duel_won}{}
-#' \item{total_keeper_sweeper}{}
-#' \item{successful_final_third_passes}{}
-#' \item{att_rf_goal}{}
-#' \item{shield_ball_oop}{}
-#' \item{fk_foul_won}{}
-#' \item{total_cross_nocorner}{}
-#' \item{keeper_throws}{}
-#' \item{att_bx_left}{}
-#' \item{successful_put_through}{}
-#' \item{total_tackle}{}
-#' \item{att_sv_low_left}{}
-#' \item{passes_left}{}
-#' \item{big_chance_scored}{}
-#' \item{att_rf_target}{}
-#' \item{att_cmiss_high_left}{}
-#' \item{accurate_launches}{}
-#' \item{poss_lost_all}{}
-#' \item{att_sv_low_centre}{}
-#' \item{accurate_long_balls}{}
-#' \item{challenge_lost}{}
-#' \item{total_cross}{}
-#' \item{att_goal_low_right}{}
-#' \item{clean_sheet}{}
-#' \item{att_obox_blocked}{}
+#' \item{att_ibox_post}{post/crossbar hit from a shot inside the box}
+#' \item{poss_won_def_3_rd}{total number of times possession was regained in the defensive third of the field}
+#' \item{accurate_back_zone_pass}{a pass that is successful and ends in a player’s own half of the pitch }
+#' \item{att_cmiss_left}{shot that misses within 0.5 metres to the left of the goal}
+#' \item{att_goal_low_centre}{a goal in the bottom center of the goal}
+#' \item{goal_assist_openplay}{goal assist from an open play situation}
+#' \item{passes_right}{Pass to the right wing (attacking half)}
+#' \item{total_throws}{total number of throw-ins}
+#' \item{att_obox_target}{shot from outside the box that was saved by the goalkeeper}
+#' \item{successful_open_play_pass}{any type of pass to a teammate in open play}
+#' \item{goal_assist_setplay}{a goal assist from a corner, free kick or throw-in, where the assist itself may be several passes after the set play in question.}
+#' \item{total_back_zone_pass}{total number of passes that end in the player’s own half – excluding throw-ins and keeper throws}
+#' \item{total_long_balls}{total passes longer than 35 yards}
+#' \item{att_hd_goal}{a goal scored with the head}
+#' \item{accurate_keeper_throws}{accurate throws from the goalkeeper in open play}
+#' \item{att_obx_centre}{total shots from outside the box, in the center (less than 35 yards out)}
+#' \item{att_openplay}{a shot attempt created from an open play or a fast break}
+#' \item{poss_won_mid_3_rd}{total number of times possession was regained in the midfield third of the field}
+#' \item{put_through}{an attacking player who plays a pass/cross/shot through an attempted block}
+#' \item{big_chance_created}{a pass which led to a clear scoring opportunity e.g. one-on-one situation or a shot from just a few yards out}
+#' \item{att_ibox_target}{shot from inside the box that are saved by the goalkeeper}
+#' \item{freekick_cross}{a ball played into the box directly from a free kick (successful or unsuccessful)}
+#' \item{att_freekick_total}{total shots from direct free kicks}
+#' \item{goal_kicks}{goalkeeper restarts play with a goal kick}
+#' \item{att_lf_total}{total left-footed shots}
+#' \item{open_play_pass}{any type of pass in open play (successful or unsuccessful)}
+#' \item{goal_assist_intentional}{qualifier for an assist to confirm that the assisting player had a direct intention to set up a goal attempt}
+#' \item{aerial_won}{successful aerial duels}
+#' \item{goal_assist}{player assists a goal by passing the ball to the player who scored the goal}
+#' \item{total_pass}{total of all attempted (successful or unsuccessful) passes excluding throw-ins, keeper throws and crosses}
+#' \item{midfielder_goals}{goals scored by midfielders}
+#' \item{total_launches}{number of long balls launched forward into an area of the pitch rather than to a specific team-mate}
+#' \item{fwd_pass}{a pass forward (excludes throw-ins, keeper throws, goal kicks and crosses)}
+#' \item{effective_blocked_cross}{total number of opposition crosses blocked by the team resulting in possession being won}
+#' \item{outfielder_block}{defender blocks a shot}
+#' \item{att_miss_high_left}{attempt that misses - over the crossbar and left}
+#' \item{goals}{total goals scored}
+#' \item{touches_in_opp_box}{number of touches in opposing team's box}
+#' \item{total_corners_intobox}{total corners that reached the box – includes long balls if the corner kick is passed greater than 35 yards}
+#' \item{blocked_cross}{total number of opposition crosses blocked by the team}
+#' \item{att_miss_right}{attempt that misses - to the right}
+#' \item{att_bx_centre}{shot from the center of the box}
+#' \item{post_scoring_att}{shot on goal which hits the post}
+#' \item{ontarget_att_assist}{player assists another player, who takes a shot that is on target (includes goals)}
+#' \item{long_pass_own_to_opp}{long pass made from a player’s own half into the opposition’s half}
+#' \item{att_ibox_goal}{goal from a shot inside the box}
+#' \item{accurate_chipped_pass}{total number of successful passes played in the air and not along the ground – does not include crosses}
+#' \item{duel_won}{duel over the possession of the ball where a player wins the ball}
+#' \item{total_keeper_sweeper}{goalkeeper attempts to come off her line and win possession of the ball}
+#' \item{successful_final_third_passes}{total number of successful passes where the ball ends in the final third of the pitch (excludes throw-ins, keeper throws and crosses)}
+#' \item{att_rf_goal}{right-footed goals}
+#' \item{shield_ball_oop}{a defender shields the ball with her body from an opponent as the ball rolls out of play}
+#' \item{fk_foul_won}{free kicks won when fouled or as a result of dangerous play by the opposition (does not include handball or penalties)}
+#' \item{total_cross_nocorner}{total number of crosses that are not from corners}
+#' \item{keeper_throws}{goalkeeper throw-outs}
+#' \item{att_bx_left}{shot from the left side of the box}
+#' \item{successful_put_through}{an attacking player who plays a pass/cross/shot through an attempted block successfully}
+#' \item{total_tackle}{total number of tackles}
+#' \item{att_sv_low_left}{a shot that is saved in the low, left part of the goal}
+#' \item{passes_left}{pass to the left wing (attacking half)}
+#' \item{big_chance_scored}{a goal scored from a clear-cut chance}
+#' \item{att_rf_target}{right-footed shots that were saved by the goalkeeper}
+#' \item{att_cmiss_high_left}{shot that misses within 0.5 metres over the crossbar and left}
+#' \item{accurate_launches}{long ball played forward without an obvious target but successfully finds a team-mate}
+#' \item{poss_lost_all}{total losses of possession}
+#' \item{att_sv_low_centre}{a shot that is saved in the bottom centre part of the goal}
+#' \item{accurate_long_balls}{accurate passes further than 35 yards (excluding throw-ins, crosses, keeper throws)}
+#' \item{challenge_lost}{challenge that did not make contact, i.e. a missed challenge where the player was dribbled past}
+#' \item{total_cross}{total number of crosses (via corners, open play and set pieces)}
+#' \item{att_goal_low_right}{a goal in the bottom right of the goal}
+#' \item{clean_sheet}{no goals conceded in the game (player must play 90 minutes)}
+#' \item{att_obox_blocked}{shot from outside the box that is blocked before reaching the goal }
 #' \item{att_ibox_miss}{}
-#' \item{accurate_goal_kicks}{}
-#' \item{saved_obox}{}
-#' \item{unsuccessful_touch}{}
-#' \item{shot_off_target}{}
-#' \item{forward_goals}{}
-#' \item{poss_lost_ctrl}{}
-#' \item{hand_ball}{}
-#' \item{goal_assist_deadball}{}
-#' \item{att_ibox_blocked}{}
-#' \item{aerial_lost}{}
-#' \item{att_sv_low_right}{}
+#' \item{accurate_goal_kicks}{attempt off target from a shot inside the box}
+#' \item{saved_obox}{shot saved from shot outside the box}
+#' \item{unsuccessful_touch}{a player only touched the ball and lost possession – bad control}
+#' \item{shot_off_target}{number of shots off target - shot wide or over the goal}
+#' \item{forward_goals}{goals scored by forwards}
+#' \item{poss_lost_ctrl}{total losses of possession excluding clearances & long goalkeeper distribution}
+#' \item{hand_ball}{number of hand balls}
+#' \item{goal_assist_deadball}{assist directly from a corner or free kick}
+#' \item{att_ibox_blocked}{shot attempt from inside the box that is blocked (excludes any shots saved/cleared off the line in a defensive act)}
+#' \item{aerial_lost}{unsuccessful aerial duels. Definition of an aerial duel: Two outfield players compete for the ball, with either both players jumping or only one jumping and the other contesting the header by making it difficult to win, where one player wins the contest with a header. In the case of an outfield player and a goalkeeper competing for the ball where the goalkeeper punches it clear, this is also classed as an aerial duel.}
+#' \item{att_sv_low_right}{a shot that is saved in the low, right part of the goal}
 #' \item{crosses_18_yard}{}
 #' \item{final_third_entries}{}
 #' \item{att_hd_total}{}
@@ -374,7 +374,7 @@
 #' \item{accurate_corners_intobox}{}
 #' \item{total_att_assist}{}
 #' \item{att_post_left}{}
-#' \item{att_setpiece}{}
+#' \item{att_setpiece}{number of set pieces attempted}
 #' \item{offtarget_att_assist}{}
 #' \item{att_obox_miss}{}
 #' \item{corner_taken}{}
@@ -387,13 +387,13 @@
 #' \item{total_flick_on}{}
 #' \item{diving_save}{}
 #' \item{att_freekick_miss}{}
-#' \item{goals_conceded}{}
+#' \item{goals_conceded}{number of goals conceded}
 #' \item{att_lg_centre}{}
 #' \item{total_high_claim}{}
 #' \item{error_lead_to_goal}{}
 #' \item{goals_conceded_ibox}{}
 #' \item{interceptions_in_box}{}
-#' \item{total_offside}{}
+#' \item{total_offside}{offside total}
 #' \item{good_high_claim}{}
 #' \item{saved_ibox}{}
 #' \item{att_miss_high}{}
@@ -401,7 +401,7 @@
 #' \item{effective_head_clearance}{}
 #' \item{accurate_flick_on}{}
 #' \item{accurate_layoffs}{}
-#' \item{total_yellow_card}{}
+#' \item{total_yellow_card}{total yellow cards}
 #' \item{head_clearance}{}
 #' \item{att_lf_target}{}
 #' \item{att_cmiss_right}{}
