@@ -11,6 +11,8 @@ nwslR
 
 `nwslR` is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world. Previously, data regarding the league has been disparate and often difficult to find. The goal of this package is to make it easier for fans and analysts to access and engage with all these data in one place. We're just getting started here; we still have a few [issues](https://github.com/adror1/nwslR/issues) open where we could use some help! Additionally, if you see anything you'd like added, changed, or updated, please open up a new issue of your own.
 
+This package is currently in the process of changing and updating significantly, so it is suggested that you frequently update it so that you have access to the most recent version.
+
 Install
 -------
 
@@ -46,12 +48,12 @@ head(nwslR::fieldplayer_overall_season_stats)
 #> # A tibble: 6 x 14
 #>   person_id season nation pos   team_id    mp starts   min   gls   ast
 #>       <int>  <dbl> <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl>
-#> 1       342   2013 " USA" DF    WAS         5      4    NA     0     0
-#> 2       117   2013 " USA" FW,MF NJ         20     20    NA     3     3
-#> 3         6   2013 " ESP" FW    WNY        15     14     3     1    NA
-#> 4       300   2013 " USA" DF,MF KC         22     22  1900     0     5
-#> 5       202   2013 " USA" DF    POR         4      2   212     0     0
-#> 6       202   2013 " USA" DF    BOS        11     11   990     0     1
+#> 1       342   2013 USA    DF    WAS         5      4    NA     0     0
+#> 2       117   2013 USA    FW,MF NJ         20     20    NA     3     3
+#> 3         6   2013 ESP    FW    WNY        15     14     3     1    NA
+#> 4       300   2013 USA    DF,MF KC         22     22  1900     0     5
+#> 5       202   2013 USA    DF    POR         4      2   212     0     0
+#> 6       202   2013 USA    DF    BOS        11     11   990     0     1
 #> # … with 4 more variables: pk <dbl>, p_katt <dbl>, crd_y <dbl>,
 #> #   crd_r <dbl>
 ```
@@ -85,7 +87,17 @@ Functionality
 -------------
 
 ``` r
-adv_team_stats #scrapes and formats hundreds of advanced team statistics from the NWSL website
+adv_team_stats #scraped and formatted dataset of hundreds of advanced team statistics from the NWSL website
+```
+
+NOTE: `adv_team_stats` will soon be deprecated. Instead, use `get_adv_team_stats`.
+
+To use this function, you need to find the `game_id` for a given game.
+
+![These are available in the `game` table (updated periodically throughout the season) or by looking on the NWSL website.](man/figures/game_id_ex.png)
+
+``` r
+get_adv_team_stats("utah_royals-vs-washington-spirit-2019-04-20")
 ```
 
 ``` r
@@ -95,12 +107,12 @@ head(harris)
 #> # A tibble: 6 x 22
 #>   person_id season nation pos   team_id    mp starts   min    ga ga_90
 #>       <dbl> <chr>  <chr>  <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl>
-#> 1     10007 2013   " USA" GK    WAS        18     18  1620    33 1.83 
-#> 2     10007 2014   " USA" GK    WAS        19     19  1710    31 1.63 
-#> 3     10007 2015   " USA" GK    WAS         9      9   810    12 1.33 
-#> 4     10007 2016   " USA" GK    ORL        15     15  1350    20 1.33 
-#> 5     10007 2017   " USA" GK    ORL        13     13  1106     7 0.570
-#> 6     10007 2018   " USA" GK    ORL        21     21  1890    31 1.48 
+#> 1     10007 2013   USA    GK    WAS        18     18  1620    33 1.83 
+#> 2     10007 2014   USA    GK    WAS        19     19  1710    31 1.63 
+#> 3     10007 2015   USA    GK    WAS         9      9   810    12 1.33 
+#> 4     10007 2016   USA    GK    ORL        15     15  1350    20 1.33 
+#> 5     10007 2017   USA    GK    ORL        13     13  1106     7 0.570
+#> 6     10007 2018   USA    GK    ORL        21     21  1890    31 1.48 
 #> # … with 12 more variables: so_ta <dbl>, saves <dbl>, save_pct <dbl>,
 #> #   w <dbl>, d <dbl>, l <dbl>, cs <dbl>, cs_pct <dbl>, crd_y <dbl>,
 #> #   crd_r <dbl>, player <chr>, name_other <chr>

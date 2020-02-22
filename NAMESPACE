@@ -2,6 +2,11 @@
 
 export(avg_field_stats)
 export(avg_gk_stats)
+export(get_adv_team_stats)
 export(player_search)
 import(dplyr)
+import(purrr)
 import(stringr)
+import(tidyr)
+importFrom(jsonlite,fromJSON)
+importFrom(snakecase,to_any_case)
