@@ -3,7 +3,8 @@ Title: Datasets and analysis functions for the National Women's Soccer League (N
 Version: 0.0.0.9000
 Authors@R: c(
     person("Arielle", "Dror", email = "adror@smith.edu", role = c("aut", "cre")), 
-    person("Sophia", "Tannir", email = "stannir@smith.edu", role = c("aut")))
+    person("Sophia", "Tannir", email = "stannir@smith.edu", role = c("aut")),
+    person("Lydia", "Vandenbergh Jackson", email = "vandenbergh.lydia@gmail.com", role = c("ctb")))
 Description: What the package does (one paragraph).
 License: GPL-3
 Depends: R (>= 2.10)
