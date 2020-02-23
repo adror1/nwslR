@@ -1,4 +1,4 @@
-globalVariables(c("type", "value", "game_id", "status", "team_id", "link", "result", "slug"))
+globalVariables(c("type", "value", "game_id", "status", "team_id", "link"))
 
 
 #pulls JSON files for each game with information regarding each game and returns a list
@@ -14,7 +14,7 @@ pull_boxscore <- function(game_id) {
 #boxscore = the list object that is converted from the json file (aka pull_boxscore() output)
 #game_id =  unique game id as string
 
-create_df <- function(boxscore, game_id) {
+create_df_team <- function(boxscore, game_id) {
 
   #indexes into the list and pulls out the team stats tables
   home_df_stats <- purrr::pluck(boxscore, game_id, "lineUp", "stat", 1)
@@ -79,7 +79,7 @@ create_df <- function(boxscore, game_id) {
 #' 
 #' Scrapes NWSL website to pull team stats for each game. Returns a data frame with two rows for each
 #' game ID (home and away) as well as up to 200 different statistics depending on the game
-#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in our `game` table. 
+#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table. 
 #' @importFrom jsonlite fromJSON
 #' @importFrom snakecase to_any_case
 #' @import purrr
@@ -113,11 +113,8 @@ get_adv_team_stats <- function(game_id) {
     names(vector_boxscores) <- game_id
 
     #creates the df
-    df_boxscore <- create_df(vector_boxscores, game_id)
+    df_boxscore <- create_df_team(vector_boxscores, game_id)
     
-    #converts any NAs to 0
-    team_boxscore[is.na(team_boxscore)] <- 0
-
   #returns the df 
   return(df_boxscore)
 }
