@@ -75,11 +75,14 @@ create_df_team <- function(boxscore, game_id) {
   return(full_game_stat)
 }
 
-#' Advanced team-level statistics by game 
-#' 
+#' Advanced team-level statistics by game
+#'
 #' Scrapes NWSL website to pull team stats for each game. Returns a data frame with two rows for each
 #' game ID (home and away) as well as up to 200 different statistics depending on the game
-#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table. 
+#'
+#' To see variable documentation, please see the static dataset `adv_team_stats.` Variable documentation will be added to the function soon.
+#'
+#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table.
 #' @importFrom jsonlite fromJSON
 #' @importFrom snakecase to_any_case
 #' @import purrr
@@ -89,33 +92,33 @@ create_df_team <- function(boxscore, game_id) {
 #' @export
 get_adv_team_stats <- function(game_id) {
 
-  season_request <- str_extract_all(game_id, "[[:digit:]]{4}") 
+  season_request <- str_extract_all(game_id, "[[:digit:]]{4}")
 
   season_request <- as.numeric(season_request)
 
-  #two error handling situations 
+  #two error handling situations
 
   if(season_request > 2019 | season_request < 2016) {
     stop("Invalid Year. Please choose a game from between 2016-2019.")
   }
- 
+
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
                   "houston-dash-vs-seattle-reign-2017-09-03",
                   "kansas-city-vs-sky-blue-2017-09-03")) {
     stop("This game does not have available statistics.")
   }
-  
-    
-    #pulls boxscore 
+
+
+    #pulls boxscore
     vector_boxscores <- pull_boxscore(game_id)
-  
+
     #names list object according to game_id (more for troubleshooting than anything else)
     names(vector_boxscores) <- game_id
 
     #creates the df
     df_boxscore <- create_df_team(vector_boxscores, game_id)
-    
-  #returns the df 
+
+  #returns the df
   return(df_boxscore)
 }
 

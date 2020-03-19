@@ -123,7 +123,9 @@ format_stats <- function(df) {
 #'
 #' Scrapes NWSL website to pull player stats for each game. Returns a data frame with one row per player on each team
 #' game ID (home and away) as well as over 200 different statistics
-#' @param game_id game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table.
+#'
+#' Most variables are documented at the following link, but official documentation will be added to the pacakge soon: https://winsports.dayscript.com/docs/database/match_player_stats
+#' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table.
 #' @importFrom jsonlite fromJSON
 #' @importFrom snakecase to_any_case
 #' @import purrr
