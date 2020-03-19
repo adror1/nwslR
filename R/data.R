@@ -266,7 +266,7 @@
 #' \item{att_ibox_post}{post/crossbar hit from a shot inside the box}
 #' \item{poss_won_def_3_rd}{total number of times possession was regained in the defensive third of the field}
 #' \item{accurate_back_zone_pass}{a pass that is successful and ends in a player’s own half of the pitch }
-#' \item{att_cmiss_left}{shot that misses within 0.5 metres to the left of the goal}
+#' \item{att_cmiss_left}{shot that misses within 0.5 meters to the left of the goal}
 #' \item{att_goal_low_centre}{a goal in the bottom center of the goal}
 #' \item{goal_assist_openplay}{goal assist from an open play situation}
 #' \item{passes_right}{Pass to the right wing (attacking half)}
@@ -325,7 +325,7 @@
 #' \item{passes_left}{pass to the left wing (attacking half)}
 #' \item{big_chance_scored}{a goal scored from a clear-cut chance}
 #' \item{att_rf_target}{right-footed shots that were saved by the goalkeeper}
-#' \item{att_cmiss_high_left}{shot that misses within 0.5 metres over the crossbar and left}
+#' \item{att_cmiss_high_left}{shot that misses within 0.5 meters over the crossbar and left}
 #' \item{accurate_launches}{long ball played forward without an obvious target but successfully finds a team-mate}
 #' \item{poss_lost_all}{total losses of possession}
 #' \item{att_sv_low_centre}{a shot that is saved in the bottom centre part of the goal}
@@ -335,7 +335,7 @@
 #' \item{att_goal_low_right}{a goal in the bottom right of the goal}
 #' \item{clean_sheet}{no goals conceded in the game (player must play 90 minutes)}
 #' \item{att_obox_blocked}{shot from outside the box that is blocked before reaching the goal }
-#' \item{att_ibox_miss}{}
+#' \item{att_ibox_miss}{attempts off target from shots inside the box}
 #' \item{accurate_goal_kicks}{attempt off target from a shot inside the box}
 #' \item{saved_obox}{shot saved from shot outside the box}
 #' \item{unsuccessful_touch}{a player only touched the ball and lost possession – bad control}
@@ -347,124 +347,126 @@
 #' \item{att_ibox_blocked}{shot attempt from inside the box that is blocked (excludes any shots saved/cleared off the line in a defensive act)}
 #' \item{aerial_lost}{unsuccessful aerial duels. Definition of an aerial duel: Two outfield players compete for the ball, with either both players jumping or only one jumping and the other contesting the header by making it difficult to win, where one player wins the contest with a header. In the case of an outfield player and a goalkeeper competing for the ball where the goalkeeper punches it clear, this is also classed as an aerial duel.}
 #' \item{att_sv_low_right}{a shot that is saved in the low, right part of the goal}
-#' \item{crosses_18_yard}{-----}
-#' \item{final_third_entries}{-----}
-#' \item{att_hd_total}{-----}
-#' \item{accurate_cross_nocorner}{-----}
-#' \item{effective_clearance}{-----}
-#' \item{fk_foul_lost}{-----}
-#' \item{att_hd_miss}{-----}
-#' \item{won_corners}{-----}
-#' \item{possession_percentage}{-----}
-#' \item{interception}{-----}
-#' \item{attempted_tackle_foul}{-----}
-#' \item{backward_pass}{-----}
-#' \item{first_half_goals}{-----}
-#' \item{interception_won}{-----}
-#' \item{pen_area_entries}{-----}
-#' \item{att_lf_goal}{-----}
-#' \item{accurate_throws}{-----}
-#' \item{big_chance_missed}{-----}
-#' \item{accurate_freekick_cross}{-----}
-#' \item{att_hd_target}{-----}
-#' \item{total_contest}{-----}
-#' \item{hit_woodwork}{-----}
-#' \item{total_clearance}{-----}
-#' \item{long_pass_own_to_opp_success}{-----}
-#' \item{accurate_corners_intobox}{-----}
-#' \item{total_att_assist}{-----}
-#' \item{att_post_left}{-----}
-#' \item{att_setpiece}{number of set pieces attempted}
-#' \item{offtarget_att_assist}{-----}
-#' \item{att_obox_miss}{-----}
-#' \item{corner_taken}{-----}
-#' \item{crosses_18_yardplus}{-----}
-#' \item{formation_used}{-----}
-#' \item{total_shots}{-----}
-#' \item{passing_accuracy}{-----}
-#' \item{shot_faced}{-----}
-#' \item{shots_on_goal}{-----}
-#' \item{total_flick_on}{-----}
-#' \item{diving_save}{-----}
-#' \item{att_freekick_miss}{-----}
+#' \item{crosses_18_yard}{a cross caught by the goalkeeper when delivered from within 18 yards of the by-line}
+#' \item{final_third_entries}{a pass or other action where the ball moves from outside the final third into the final third}
+#' \item{att_hd_total}{total headed attempts}
+#' \item{accurate_cross_nocorner}{accurate crosses (including freekicks but excluding corners)}
+#' \item{effective_clearance}{a successful defensive clearance – where a player under pressure kicks the ball clear of the defensive zone or/and out of play}
+#' \item{fk_foul_lost}{free kicks conceded to the opposition via fouls, handballs, dangerous play, 6-second violations, or back passes (includes penalties)}
+#' \item{att_hd_miss}{a headed attempt off target}
+#' \item{won_corners}{total corners forced by the team}
+#' \item{possession_percentage}{the percentage of overall ball possession the given team had during the game}
+#' \item{interception}{a defending player intercepts a pass between opposition players}
+#' \item{attempted_tackle_foul}{a foul event with "attempted tackles" qualifier assigned}
+#' \item{backward_pass}{a pass backward (excludes throw-ins, keeper throws, goal kicks and crosses)}
+#' \item{first_half_goals}{goals scored in the first half of play}
+#' \item{interception_won}{interception where the player wins and retains possession of the ball}
+#' \item{pen_area_entries}{a pass or other action where the ball moves from outside to inside the penalty area}
+#' \item{att_lf_goal}{goal from a left-footed shot}
+#' \item{accurate_throws}{all accurate throw-ins}
+#' \item{big_chance_missed}{a clear-cut scoring opportunity which was not converted / scored}
+#' \item{accurate_freekick_cross}{a ball played into the box directly from a free kick that successfully found a team-mate}
+#' \item{att_hd_target}{a headed attempt that is saved by the goalkeeper}
+#' \item{total_contest}{a dribble past a player attempted (contests always involve 2 players) – doesn’t include ‘overrun’ situations where the attacking player takes on an opponent but the ball runs away from them out of play or to an opponent}
+#' \item{hit_woodwork}{total number of occasions the ball hits the post in any situation (includes blocked onto or saved, but not goals)}
+#' \item{total_clearance}{total number of clearances}
+#' \item{long_pass_own_to_opp_success}{successful long pass from a player’s own half into the opposition’s half}
+#' \item{accurate_corners_intobox}{accurate corner distributions into the box – can include long balls if the corner kick is passed further than 35 yards}
+#' \item{total_att_assist}{player assists a shot (including goals)}
+#' \item{att_post_left}{a shot that hits the left post}
+#' \item{att_setpiece}{a shot that came directly after a set-piece (corner, free kick or throw-in)}
+#' \item{offtarget_att_assist}{player assists another player, who takes a shot but misses the goal}
+#' \item{att_obox_miss}{shot that misses the goal completely that is from outside the box}
+#' \item{corner_taken}{player takes a corner}
+#' \item{crosses_18_yardplus}{a cross caught by the goalkeeper when delivered from further than 18 yards from the by-line}
+#' \item{formation_used}{formation used}
+#' \item{total_shots}{total shots}
+#' \item{passing_accuracy}{passing accuracy}
+#' \item{shot_faced}{shot goalkeeper faced}
+#' \item{shots_on_goal}{shots on goal}
+#' \item{total_flick_on}{total number of passes (successful or unsuccessful) which are “flicked” on to a running team-mate - usually a header}
+#' \item{diving_save}{combination of ALL diving saves and catches, including saves where the ball ends up still in danger in the possession of an attacking player}
+#' \item{att_freekick_miss}{total shots missed from freekicks}
 #' \item{goals_conceded}{number of goals conceded}
-#' \item{att_lg_centre}{-----}
-#' \item{total_high_claim}{-----}
-#' \item{error_lead_to_goal}{-----}
-#' \item{goals_conceded_ibox}{-----}
-#' \item{interceptions_in_box}{-----}
+#' \item{att_lg_centre}{shot center outside box (more than 35 yards)}
+#' \item{total_high_claim}{total number of high claims by goalkeeper}
+#' \item{error_lead_to_goal}{a mistake which leads to the opposition scoring}
+#' \item{goals_conceded_ibox}{goal conceded from a shot inside the box}
+#' \item{interceptions_in_box}{interception made within the penalty area}
 #' \item{total_offside}{offside total}
-#' \item{good_high_claim}{-----}
-#' \item{saved_ibox}{-----}
-#' \item{att_miss_high}{-----}
-#' \item{att_sv_high_centre}{-----}
-#' \item{effective_head_clearance}{-----}
-#' \item{accurate_flick_on}{-----}
-#' \item{accurate_layoffs}{-----}
+#' \item{good_high_claim}{goalkeeper catches a cross}
+#' \item{saved_ibox}{shot saved from shot inside the box}
+#' \item{att_miss_high}{attempt that misses - over the crossbar}
+#' \item{att_sv_high_centre}{shot that is saved in the top center part of the goal}
+#' \item{effective_head_clearance}{a successful defensive clearance via a header – where a player under pressure heads the ball clear of the defensive zone or/and out of play}
+#' \item{accurate_flick_on}{total number of passes which are “flicked” on and successfully find a team-mate – usually a header}
+#' \item{accurate_layoffs}{a successful pass by a striker who has received the ball with her back to goal and then plays the ball back towards team-mates}
 #' \item{total_yellow_card}{total yellow cards}
-#' \item{head_clearance}{-----}
-#' \item{att_lf_target}{-----}
-#' \item{att_cmiss_right}{-----}
-#' \item{att_sv_high_left}{-----}
-#' \item{att_freekick_target}{-----}
-#' \item{overrun}{-----}
-#' \item{total_layoffs}{-----}
-#' \item{total_pull_back}{-----}
-#' \item{att_miss_high_right}{-----}
-#' \item{accurate_through_ball}{-----}
-#' \item{clearance_off_line}{-----}
-#' \item{att_post_high}{-----}
-#' \item{att_cmiss_high}{-----}
-#' \item{att_goal_low_left}{-----}
-#' \item{att_sv_high_right}{-----}
-#' \item{att_obxd_right}{-----}
-#' \item{pts_gained_losing_pos}{-----}
-#' \item{att_cmiss_high_right}{-----}
-#' \item{goals_conceded_obox}{-----}
-#' \item{att_obox_goal}{-----}
-#' \item{pts_dropped_winning_pos}{-----}
-#' \item{error_lead_to_shot}{-----}
-#' \item{att_goal_high_right}{-----}
-#' \item{penalty_conceded}{-----}
-#' \item{penalty_faced}{-----}
-#' \item{att_obx_right}{-----}
-#' \item{pen_goals_conceded}{-----}
-#' \item{att_pen_goal}{-----}
-#' \item{att_goal_high_left}{-----}
-#' \item{penalty_won}{-----}
-#' \item{punches}{-----}
-#' \item{own_goal_accrued}{-----}
-#' \item{att_ibox_own_goal}{-----}
-#' \item{own_goals}{-----}
-#' \item{att_obox_post}{-----}
-#' \item{second_yellow}{-----}
-#' \item{total_red_card}{-----}
-#' \item{defender_goals}{-----}
-#' \item{att_one_on_one}{-----}
-#' \item{att_freekick_post}{-----}
-#' \item{att_pen_post}{-----}
-#' \item{att_post_right}{-----}
-#' \item{contentious_decision}{-----}
-#' \item{att_obxd_left}{-----}
-#' \item{att_hd_post}{-----}
-#' \item{foul_throw_in}{-----}
-#' \item{att_lg_left}{-----}
-#' \item{att_fastbreak}{-----}
-#' \item{shot_fastbreak}{-----}
-#' \item{total_fastbreak}{-----}
-#' \item{att_obx_left}{-----}
-#' \item{accurate_pull_back}{-----}
-#' \item{att_freekick_goal}{-----}
-#' \item{last_man_tackle}{-----}
-#' \item{attempts_obox}{-----}
-#' \item{attempts_ibox}{-----}
-#' \item{att_pen_miss}{-----}
-#' \item{goal_fastbreak}{-----}
-#' \item{att_obp_goal}{-----}
-#' \item{penalty_save}{-----}
-#' \item{att_pen_target}{-----}
-#' \item{att_lg_right}{-----}
-#' \item{att_corner}{-----}
+#' \item{head_clearance}{clearance via a header}
+#' \item{att_lf_target}{left-footed shot that was saved by the goalkeeper}
+#' \item{att_cmiss_right}{a shot that misses within 0.5 meters to the right of the goal}
+#' \item{att_sv_high_left}{a shot that is saved in the top left of the goal}
+#' \item{att_freekick_target}{a direct free kick saved by the goalkeeper}
+#' \item{overrun}{a player attempts a dribble but hits the ball too far ahead and loses it}
+#' \item{total_layoffs}{total passes by a striker who has received the ball with her back to goal and then plays the ball back towards team-mates}
+#' \item{total_pull_back}{an attacking player reaches the byline and passes the ball in a backwards direction (successful or unsuccessful)}
+#' \item{att_miss_high_right}{attempt that misses - over the crossbar and right}
+#' \item{accurate_through_ball}{accurate passes that leave a player one-on-one with the goalkeeper}
+#' \item{clearance_off_line}{clearance/blocked shot off the line}
+#' \item{att_goal_high_right}{a goal in the top right of the goal}
+#' \item{att_post_high}{a shot that hits the crossbar}
+#' \item{att_cmiss_high}{shot that misses within 0.5 meters over the crossbar}
+#' \item{att_goal_low_left}{a goal in the bottom left of the goal}
+#' \item{att_sv_high_right}{a shot that is saved in the top right of the goal}
+#' \item{att_obxd_right}{total shots from outside the box to the right adjacent to the penalty area}
+#' \item{pts_gained_losing_pos}{points gained from losing positions}
+#' \item{att_cmiss_high_right}{shot that misses within 0.5 meters over the crossbar and right}
+#' \item{goals_conceded_obox}{goal conceded from a shot outside the box}
+#' \item{att_obox_goal}{goal from a shot outside the box}
+#' \item{pts_dropped_winning_pos}{points dropped from winning positions}
+#' \item{error_lead_to_shot}{a mistake which leads to an opposition shot}
+#' \item{penalty_conceded}{penalty awarded against the team in question (including handballs) - differs from "pen_goals_conceded" in that the penalty kick has been conceded but the opposition may or may not have scored the penalty}
+#' \item{penalty_faced}{goalkeeper faced a penalty kick}
+#' \item{att_obx_right}{total shots from outside the box, on the right (less than 35 yards out)}
+#' \item{pen_goals_conceded}{penalty goal conceded (and scored) against the team in question}
+#' \item{att_pen_goal}{penalty goal}
+#' \item{att_goal_high_left}{a goal in the top left of the goal}
+#' \item{penalty_won}{player fouled within the penalty box (excludes any penalties won for handball)}
+#' \item{punches}{goalkeeper punches the ball clear from a high ball}
+#' \item{own_goal_accrued}{own goal}
+#' \item{att_ibox_own_goal}{own goal from inside the box}
+#' \item{own_goals}{total own goals conceded}
+#' \item{att_obox_post}{shot from outside the box that hit the post}
+#' \item{second_yellow}{second yellow card given}
+#' \item{total_red_card}{total number of red cards awarded to the team overall}
+#' \item{defender_goals}{a goal scored by a defender}
+#' \item{att_one_on_one}{a shot attempt where the attacker was in a one-on-one situation against the goalkeeper}
+#' \item{att_freekick_post}{a direct free kick that hits the post}
+#' \item{att_pen_post}{a penalty that hits the post}
+#' \item{att_post_right}{a shot that hits the right post}
+#' \item{contentious_decision}{any major talking point or error made by the referee}
+#' \item{att_obxd_left}{total shots from outside the box to the left adjacent to the penalty area}
+#' \item{att_hd_post}{a headed attempt that hits the woodwork}
+#' \item{foul_throw_in}{throw-in taken incorrectly}
+#' \item{att_lg_left}{shot left outside box (more than 35 yards)}
+#' \item{att_fastbreak}{shot resulting from a counter-attack}
+#' \item{shot_fastbreak}{shots made following a fast break situation}
+#' \item{total_fastbreak}{total number of fast breaks that occurred}
+#' \item{att_obx_left}{total shots from outside the box to the left (less that 35 yards)}
+#' \item{accurate_pull_back}{an attacking player reaches the byline and successfully passes the ball in a backwards direction to a team-mate}
+#' \item{att_freekick_goal}{goal from a direct free kick}
+#' \item{last_man_tackle}{a player makes a defensive action/tackle and is the last person between the opponent and the goal}
+#' \item{attempts_obox}{total shots that are outside the box}
+#' \item{attempts_ibox}{total shots that are inside the box}
+#' \item{att_pen_miss}{a penalty shot that goes wide of the goal or over the crossbar}
+#' \item{goal_fastbreak}{goals scored from a fast break situation}
+#' \item{att_obp_goal}{goal scored with other body part}
+#' \item{penalty_save}{penalty save made}
+#' \item{att_pen_target}{penalty that was saved by the goalkeeper}
+#' \item{att_lg_right}{shot right outside box (more than 35 yards)}
+#' \item{att_corner}{shot that came after a corner was taken}
 #' }
+#'
+#'  @source \url{https://winsports.dayscript.com/docs/database/match_player_stats}
 #'
 "adv_team_stats"

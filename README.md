@@ -97,7 +97,7 @@ To use this function, you need to find the `game_id` for a given game.
 ![These are available in the `game` table (updated periodically throughout the season) or by looking on the NWSL website.](man/figures/game_id_ex.png)
 
 ``` r
-get_adv_team_stats("utah_royals-vs-washington-spirit-2019-04-20")
+get_adv_team_stats("utah-royals-vs-washington-spirit-2019-04-20")
 ```
 
 ``` r
