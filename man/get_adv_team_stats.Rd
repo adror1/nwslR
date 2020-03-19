@@ -13,3 +13,6 @@ get_adv_team_stats(game_id)
 Scrapes NWSL website to pull team stats for each game. Returns a data frame with two rows for each
 game ID (home and away) as well as up to 200 different statistics depending on the game
 }
+\details{
+To see variable documentation, please see the static dataset \code{adv_team_stats.} Variable documentation will be added to the function soon.
+}

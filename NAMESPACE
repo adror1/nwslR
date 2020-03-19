@@ -2,6 +2,7 @@
 
 export(avg_field_stats)
 export(avg_gk_stats)
+export(get_adv_player_stats)
 export(get_adv_team_stats)
 export(player_search)
 import(dplyr)
