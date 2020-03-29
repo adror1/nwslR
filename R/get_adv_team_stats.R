@@ -105,7 +105,7 @@ get_adv_team_stats <- function(game_id) {
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
                   "houston-dash-vs-seattle-reign-2017-09-03",
                   "kansas-city-vs-sky-blue-2017-09-03")) {
-    stop("This game does not have available statistics.")
+    stop(paste0("This game, ", game_id, ", does not have available statistics."))
   }
 
 

@@ -2,7 +2,8 @@ globalVariables(c("type", "value", "game_id", "status", "team_id", "link",
                   "stat", "firstName", "lastName", "full_name", "name_other",
                   "player_id", "match_name", "image_head", "nation", "pos",
                   "last_name", "shirt_number", "sub_position", "game_started",
-                  "mins_played", "formation_place", "total_sub_off", "player_off_id", "player_on_id"))
+                  "mins_played", "formation_place", "total_sub_off", "player_off_id", "player_on_id",
+                  "position", "position_side"))
 
 
 #pulls JSON files for each game with information regarding each game and returns a list
@@ -103,7 +104,7 @@ create_df_player <- function(boxscore, game_id) {
   full_stats_id <- full_stats_id %>%
     rename_all(.funs = to_any_case) %>%
     select(-player_id, -match_name, -stat, -image_head, -full_name, -nation, -pos, -name_other) %>%
-    select(game_id:last_name, person_id, shirt_number:sub_position, game_started,
+    select(game_id:last_name, person_id, shirt_number, position, position_side, game_started,
            mins_played, formation_place, total_sub_off, player_off_id, player_on_id, everything())
 
 
@@ -148,7 +149,7 @@ get_adv_player_stats <- function(game_id) {
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
                     "houston-dash-vs-seattle-reign-2017-09-03",
                     "kansas-city-vs-sky-blue-2017-09-03")) {
-    stop("This game does not have available statistics.")
+    stop(paste0("This game, ", game_id, ", does not have available statistics."))
   }
 
 
