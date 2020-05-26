@@ -4,8 +4,9 @@ Version: 0.0.0.9000
 Authors@R: c(
     person("Arielle", "Dror", email = "adror@smith.edu", role = c("aut", "cre")), 
     person("Sophia", "Tannir", email = "stannir@smith.edu", role = c("aut")),
-    person("Lydia", "Vandenbergh Jackson", email = "vandenbergh.lydia@gmail.com", role = c("ctb")))
-Description: What the package does (one paragraph).
+    person("Lydia", "Vandenbergh Jackson", email = "vandenbergh.lydia@gmail.com", role = c("ctb")),
+    person("Robert", "Frey", email = "rfrey22@gmail.com", role = c("ctb")))
+Description: nwslR is an R package that contains datasets and analysis functionality for the National Women’s Soccer League (NWSL). Founded in 2013, the NWSL is the United States’ top professional women’s soccer league, featuring players from all over the world. 
 License: GPL-3
 Depends: R (>= 2.10)
 Imports: 
@@ -24,5 +25,5 @@ Suggests:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
