@@ -1,6 +1,6 @@
 #Functions for extracting shot on goal locations, shot locations, etc.
 globalVariables(c("action", "assist_player_name", "assist_type", "shot_player_name", "shot_loc", "play_status",
-                  "team", "minute", "period", "second", "time", "shot_type", "sog_loc", "goal", "shot", "own_goal"))
+                  "team", "minute", "period", "second", "time", "shot_type", "sog_loc", "goal", "shot", "own_goal", "sog"))
 
 #scrapes play by play for given game id
 pull_plays <- function(game_id) {
@@ -57,6 +57,7 @@ data_wrangling <- function(df) {
            assist_player_name = str_remove(assist_player_name, "\\."),
            assist_player_name = str_squish(assist_player_name),
            assist_player_name = str_remove(assist_player_name, " following a corner"),
+           assist_player_name = str_remove(assist_player_name, " following a set piece situation"),
            shot_type = str_extract(action,"left footed shot|right footed shot|header"),
            shot_loc = str_extract(action, "\\boutside the box\\b|\\bcentre of the box\\b|\\bleft side of the box\\b|
                                   \\bright side of the box\\b|\\bvery close range\\b|\\bmore than 35 yards\\b|\\bleft side of the six yard box\\b|
@@ -69,11 +70,12 @@ data_wrangling <- function(df) {
            shot_loc = ifelse(type=="penalty saved","penalty",
                              ifelse(type=="penalty miss", "penalty", shot_loc)),
            shot_loc = str_replace(shot_loc, "converts the penalty", "penalty"),
-           shot_loc = ifelse(str_detect(action, "right side of the box")==TRUE, "right side of the box", shot_loc),
+           shot_loc = ifelse(str_detect(action, "right side of the box") ==TRUE, "right side of the box", shot_loc),
            sog_loc = str_extract(comment, "\\btop right corner\\b|\\bcentre of the goal\\b|\\btop left corner\\b|\\bbottom left corner\\b|\\bbottom right corner\\b"),
+           sog_loc = if_else(str_detect(comment, "misses") == TRUE, NA_character_, sog_loc),
            goal = ifelse(type=="goal", 1, 0),
-           shot = ifelse(type=="attempt saved" | type=="attempted blocked" | type=="miss" |
-                           type=="goal", 1, 0),
+           shot = ifelse(type != "own goal", 1, 0),
+           sog = ifelse(!is.na(sog_loc), 1, 0),
            own_goal = ifelse(type == 'own goal', 1, 0),
            team = ifelse(type == 'own goal', str_extract(action, "(?<=, )([A-z ]*)"), str_extract(action, "(?<=\\()([A-z ]*)")),
            play_status_parse = str_extract(comment, "(?<= following a )([A-z ]*)"),
@@ -98,9 +100,15 @@ data_wrangling <- function(df) {
                                str_detect(team, "Washington Spirit") ~ "WAS")) %>%
     select(game_id, team, minute, period, second, time, play_status, type, shot_type,
            shot_player_name, assist_type, assist_player_name, shot_loc, sog_loc,
-           goal, shot, own_goal, action) %>%
-
-    arrange(minute, second)
+           goal, shot, sog, own_goal, action) %>%
+    rename(shot_location = shot_loc,
+           shot_on_goal_location = sog_loc,
+           shot_on_goal = sog,
+           result = type) %>%
+    mutate(minute = as.numeric(minute),
+           second = as.numeric(second),
+           period = as.numeric(period)) %>%
+    arrange(period, minute, second)
 
 }
 
@@ -108,8 +116,29 @@ data_wrangling <- function(df) {
 #'
 #' Scrapes NWSL website to pull player stats for each game. Returns a data frame with one row per shooting action in a game, including own goals. More actions coming soon.
 #'
-#' Most variables are documented at the following link, but official documentation will be added to the pacakge soon: https://winsports.dayscript.com/docs/database/match_player_stats
 #' @param game_id Unique game id from nwsl. Find these on the NWSL website (ex: https://www.nwslsoccer.com/game/washington-spirit-vs-sky-blue-2019-04-13) or in the `game` table.
+#' @details The columns returned from the `get_events` function are as follows:
+#' \itemize{
+#' \item{"game_id"} - unique identifer for each game
+#' \item{"team"} - team ID for the team that is involved in the event
+#' \item{"minute"} - minute of play
+#' \item{"period"} - period of play
+#' \item{"second"} - second of play
+#' \item{"time"} - time on match clock
+#' \item{"play_status"} - state of game during event (i.e. open play, corner, set piece, etc.)
+#' \item{"result"} - result of the shooting event (i.e. goal, attempted saved, miss, etc.)
+#' \item{"shot_type"} - type of shot (i.e. left-footed, right-footed, header)
+#' \item{"shot_player_name} - name of player who takes the shot
+#' \item{"assist_type"} - type of assist, if applicable (i.e. through ball, cross, etc.)
+#' \item{"assist_player_name"} - name of player who provides assist, if applicable
+#' \item{"shot_location"} - location on the pitch of shot
+#' \item{"shot_on_goal_location} - shot placement in goal, if applicable
+#' \item{"goal"} - binary variable that denotes if action results in a goal
+#' \item{"shot"} - binary variable that denotes if event is a shot
+#' \item{"shot_on_goal"} - binary variable that denotes if action results in a shot on goal
+#' \item{"own_goal} - binary variable that denotes if event is an own goal
+#'\item{"action"} - full description of event
+#' }
 #' @importFrom jsonlite fromJSON
 #' @import dplyr
 #' @import stringr

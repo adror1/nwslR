@@ -13,5 +13,26 @@ get_events(game_id)
 Scrapes NWSL website to pull player stats for each game. Returns a data frame with one row per shooting action in a game, including own goals. More actions coming soon.
 }
 \details{
-Most variables are documented at the following link, but official documentation will be added to the pacakge soon: https://winsports.dayscript.com/docs/database/match_player_stats
+The columns returned from the \code{get_events} function are as follows:
+\itemize{
+\item{"game_id"} - unique identifer for each game
+\item{"team"} - team ID for the team that is involved in the event
+\item{"minute"} - minute of play
+\item{"period"} - period of play
+\item{"second"} - second of play
+\item{"time"} - time on match clock
+\item{"play_status"} - state of game during event (i.e. open play, corner, set piece, etc.)
+\item{"result"} - result of the shooting event (i.e. goal, attempted saved, miss, etc.)
+\item{"shot_type"} - type of shot (i.e. left-footed, right-footed, header)
+\item{"shot_player_name} - name of player who takes the shot
+\item{"assist_type"} - type of assist, if applicable (i.e. through ball, cross, etc.)
+\item{"assist_player_name"} - name of player who provides assist, if applicable
+\item{"shot_location"} - location on the pitch of shot
+\item{"shot_on_goal_location} - shot placement in goal, if applicable
+\item{"goal"} - binary variable that denotes if action results in a goal
+\item{"shot"} - binary variable that denotes if event is a shot
+\item{"shot_on_goal"} - binary variable that denotes if action results in a shot on goal
+\item{"own_goal} - binary variable that denotes if event is an own goal
+\item{"action"} - full description of event
+}
 }
