@@ -4,9 +4,10 @@
 \name{adv_team_stats}
 \alias{adv_team_stats}
 \title{Team statistics for each game in the National Women's Soccer League (NWSL) during 2016-2019}
-\format{A data frame with one row for each team in each game (i.e. each game has two rows, one for an away team and one for a home team). Note: variables are currently undocumented.
+\format{
+A data frame with one row for each team in each game (i.e. each game has two rows, one for an away team and one for a home team). Note: variables are currently undocumented.
 \describe{
-\item{game_id}{unique game id in the follow format: "home-team-vs-away-team_YYYY-MM-DD}
+\item{game_id}{unique game id in the following format: "home-team-vs-away-team_YYYY-MM-DD}
 \item{season}{year game was played}
 \item{status}{home/away team observations}
 \item{team_id}{the id for the team}
@@ -249,7 +250,8 @@
 \item{att_corner}{shot that came after a corner was taken}
 }
 
-@source \url{https://winsports.dayscript.com/docs/database/match_player_stats}}
+@source \url{https://winsports.dayscript.com/docs/database/match_player_stats}
+}
 \usage{
 adv_team_stats
 }

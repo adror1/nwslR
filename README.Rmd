@@ -64,16 +64,19 @@ head(nwslR::franchise, 15)
 ## Functionality
 ```{r, eval = FALSE}
 adv_team_stats #scraped and formatted dataset of hundreds of advanced team statistics from the NWSL website
+adv_player_stats #scraped and formatted dataset of hundreds of advanced player statistics from the NWSL website
 ```
 
-NOTE: `adv_team_stats` will soon be deprecated. Instead, use `get_adv_team_stats`. 
+
+NOTE: As of 6/26/2020, the following functions do not presently work due to a restructure on the league website. We hope to get this working soon, but in the meantime please use the above functionality to access the data. 
 
 To use this function, you need to find the `game_id` for a given game. 
 
 ![These are available in the `game` table (updated periodically throughout the season) or by looking on the NWSL website.](man/figures/game_id_ex.png)
 
 ```{r, eval = FALSE}
-get_adv_team_stats("utah_royals-vs-washington-spirit-2019-04-20")
+get_adv_team_stats("utah-royals-vs-washington-spirit-2019-04-20")
+get_adv_player_stats("utah-royals-vs-washington-spirit-2019-04-20")
 ```
 
 ```{r}

@@ -83,12 +83,13 @@ rookie_stats <- rookie_stats %>%
 rookie_stats
 ```
 
- First, we need to join our `team_id` column to the `franchise` dataset, so ensure functionality with the `teamcolors` dataset for visualization. This dataset uses the full team name rather than an ID. 
+ First, we need to join our `team_id` column to the `franchise` dataset, so ensure functionality with the `teamcolors` dataset for visualization. This dataset uses the full team name rather than an ID. We change the name of the team to work with `teamcolors`, which uses the most recent team names/colors. Since Reign has changed names since 2019, the name in `teamcolors` has been updated. 
 ```{r}
 rookie_team <- left_join(
   rookie_stats, franchise, 
   by = c("team_id", "season")
-)
+) %>%
+  mutate(team_name = if_else(team_name == "Reign FC", "OL Reign", team_name))
 ```
 
 Finally, we want to visualize this. 
@@ -121,14 +122,19 @@ We're curious to know how many total passes the Portland Thorns and North Caroli
 First, we need to pull the data using the `get_adv_team_stats` function. 
 
 ```{r}
-stats_2017 <- adv_team_stats %>%
-  filter(season == 2017)
+#all games played by either team in 2017, but games played in 9/3/2017 do not have available statistics
+games_2017 <- game %>%
+  filter(season == 2017,
+         home_team %in% c("POR", "NC") | away_team %in% c("POR", "NC"),
+         game_id != "chicago-red-stars-vs-north-carolina-courage-2017-09-03") 
+
+stats_2017 <- map_df(games_2017$game_id, get_adv_team_stats)
 
 stats_2017 <- stats_2017 %>%
   filter(team_id %in% c("POR", "NC")) %>%
   select(game_id, status, team_id, total_pass)
 
-stats_2017_join <- left_join(stats_2017, game, by = "game_id")
+stats_2017_join <- left_join(stats_2017, game, by = "game_id") 
 ```
 
 To ensure functionality with `teamcolors`, we now join to our `franchise` dataset.
