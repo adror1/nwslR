@@ -77,11 +77,10 @@ To use this function, you need to find the `game_id` for a given game.
 ```{r, eval = FALSE}
 get_adv_team_stats("utah-royals-vs-washington-spirit-2019-04-20")
 get_adv_player_stats("utah-royals-vs-washington-spirit-2019-04-20")
-```
-
-```{r}
 get_events("utah-royals-vs-washington-spirit-2019-04-20")
 ```
+
+
 ```{r}
 harris <- nwslR::player_search("Harris", goalkeeper = TRUE)
 head(harris)
