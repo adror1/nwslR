@@ -90,7 +90,7 @@ adv_team_stats #scraped and formatted dataset of hundreds of advanced team stati
 adv_player_stats #scraped and formatted dataset of hundreds of advanced player statistics from the NWSL website
 ```
 
-NOTE: As of 6/26/2020, the following functions (`get_adv_team_stats` and `get_adv_player_stats`) do not presently work due to a restructure on the league website. We hope to get this working soon, but in the meantime please use the above functionality to access the data.
+The above data tables will eventually be deprecated. Please use the functions before, instead.
 
 To use this function, you need to find the `game_id` for a given game.
 
@@ -99,6 +99,7 @@ To use this function, you need to find the `game_id` for a given game.
 ``` r
 get_adv_team_stats("utah-royals-vs-washington-spirit-2019-04-20")
 get_adv_player_stats("utah-royals-vs-washington-spirit-2019-04-20")
+get_events("utah-royals-vs-washington-spirit-2019-04-20")
 ```
 
 ``` r
