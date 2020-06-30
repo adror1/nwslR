@@ -58,6 +58,7 @@ data_wrangling <- function(df) {
            assist_player_name = str_squish(assist_player_name),
            assist_player_name = str_remove(assist_player_name, " following a corner"),
            assist_player_name = str_remove(assist_player_name, " following a set piece situation"),
+           assist_player_name = str_remove(assist_player_name, " following a fast break"),
            shot_type = str_extract(action,"left footed shot|right footed shot|header"),
            shot_loc = str_extract(action, "\\boutside the box\\b|\\bcentre of the box\\b|\\bleft side of the box\\b|
                                   \\bright side of the box\\b|\\bvery close range\\b|\\bmore than 35 yards\\b|\\bleft side of the six yard box\\b|
@@ -97,7 +98,9 @@ data_wrangling <- function(df) {
                                str_detect(team, "Sky Blue") ~ "NJ",
                                str_detect(team, "Utah Royals") ~ "UTA",
                                str_detect(team, "North Carolina Courage") ~ "NC",
-                               str_detect(team, "Washington Spirit") ~ "WAS")) %>%
+                               str_detect(team, "Washington Spirit") ~ "WAS",
+                            str_detect(team, "OL Reign") ~ "OLR",
+    )) %>%
     select(game_id, team, minute, period, second, time, play_status, type, shot_type,
            shot_player_name, assist_type, assist_player_name, shot_loc, sog_loc,
            goal, shot, sog, own_goal, action) %>%
@@ -152,8 +155,8 @@ get_events <- function(game_id) {
 
   #two error handling situations
 
-  if(season_request > 2019 | season_request < 2016) {
-    stop("Invalid Year. Please choose a game from between 2016-2019.")
+  if(season_request > 2020 | season_request < 2016) {
+    stop("Invalid Year. Please choose a game from between 2016-2020.")
   }
 
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",

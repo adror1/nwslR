@@ -4,7 +4,8 @@
 \name{stadium}
 \alias{stadium}
 \title{Stadium information for games played each season}
-\format{A data frame with one row for each team in each season for all seasons with information regarding home stadiums and average attendance
+\format{
+A data frame with one row for each team in each season for all seasons with information regarding home stadiums and average attendance
 \describe{
 \item{team_id}{the id of team as they appear across all datasets in \code{nwslR}}
 \item{pri_stadium_name}{name of primary home stadium}
@@ -19,7 +20,8 @@
 \item{sec_capacity}{seating capacity of secondary home stadium}
 \item{avg_attendance}{average season home game attendance}
 \item{season}{season for which the statistics represent}
-}}
+}
+}
 \source{
 \url{https://en.wikipedia.org/wiki/List_of_National_Women\%27s_Soccer_League_stadiums}
 }

@@ -4,7 +4,8 @@
 \name{game}
 \alias{game}
 \title{Game IDs for all games 2015-2019}
-\format{A dataframe of unique IDs for all games played from 2015-2019 with scores and winners
+\format{
+A dataframe of unique IDs for all games played from 2015-2019 with scores and winners
 \describe{
 \item{game_id}{unique identifier for each game}
 \item{game_date}{day the game was played}
@@ -14,7 +15,20 @@
 \item{away_pts}{number of goals scored by the away team}
 \item{winner}{team id for winning team, if applicable. If tied, NA.}
 \item{season}{season that the game was played}
-}}
+}
+
+A data frame with one row for each game played
+\describe{
+\item{game_id}{unique game id in the follow format: "home-team-vs-away-team_YYYY-MM-DD}
+\item{game_date}{date game was played}
+\item{home_team}{home team unique ID}
+\item{away_team}{away team unique ID}
+\item{home_pts}{points scored by home team}
+\item{away_pts}{points scored by the away team}
+\item{winnter}{team ID for winning team (NA if draw)}
+\item{season}{season game was played}
+}
+}
 \source{
 \url{https://www.nwslsoccer.com}
 }
