@@ -39,7 +39,9 @@ create_df_team <- function(boxscore, game_id) {
                             str_detect(team_id, "sky-blue") ~ "NJ",
                             str_detect(team_id, "utah-royals") ~ "UTA",
                             str_detect(team_id, "north-carolina-courage") ~ "NC",
-                            str_detect(team_id, "washington-spirit") ~ "WAS"
+                            str_detect(team_id, "washington-spirit") ~ "WAS",
+                            str_detect(team_id, "ol-reign") ~ "OLR"
+
                             )) %>%
   select(game_id, status, team_id, everything())
 
@@ -62,7 +64,9 @@ create_df_team <- function(boxscore, game_id) {
                             str_detect(team_id, "sky-blue") ~ "NJ",
                             str_detect(team_id, "utah-royals") ~ "UTA",
                             str_detect(team_id, "north-carolina-courage") ~ "NC",
-                            str_detect(team_id, "washington-spirit") ~ "WAS"
+                            str_detect(team_id, "washington-spirit") ~ "WAS",
+                            str_detect(team_id, "ol-reign") ~ "OLR"
+
     )) %>%
     select(game_id, status, team_id, everything())
 

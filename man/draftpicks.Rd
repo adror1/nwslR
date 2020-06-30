@@ -4,7 +4,9 @@
 \name{draftpicks}
 \alias{draftpicks}
 \title{National Women's Soccer League (NWSL) Draft Picks since 2013}
-\format{A data frame with one row per player selected}
+\format{
+A data frame with one row per player selected
+}
 \source{
 Wikipedia (16 Jan 2020)
 \describe{

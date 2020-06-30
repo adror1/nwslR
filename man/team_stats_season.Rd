@@ -4,7 +4,8 @@
 \name{team_stats_season}
 \alias{team_stats_season}
 \title{Team stats for each season}
-\format{A data frame with one row for each team in each season for which data is available (2016-2019) with statistics for team performance
+\format{
+A data frame with one row for each team in each season for which data is available (2016-2019) with statistics for team performance
 \describe{
 \item{team_id}{the id of team as they appear across all datasets in \code{nwslR}}
 \item{goals}{total number of goals scored}
@@ -24,7 +25,8 @@
 \item{wins}{number of games won}
 \item{draws}{number of games drawn}
 \item{losses}{number of games lost}
-}}
+}
+}
 \source{
 \url{http://www.nwslsoccer.com/stats#teams}
 }

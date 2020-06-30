@@ -4,14 +4,16 @@
 \name{franchise}
 \alias{franchise}
 \title{Franchise information for the National Women's Soccer League (NWSL)}
-\format{A data frame with one row for each team in each season for all seasons of the NWSL with information about each team in the league
+\format{
+A data frame with one row for each team in each season for all seasons of the NWSL with information about each team in the league
 \describe{
 \item{team_id}{the id of team as they appear across all datasets in \code{nwslR}}
 \item{team_name}{name of team}
 \item{city}{home city of team}
 \item{state}{home state of team}
 \item{season}{season for which the team was active}
-}}
+}
+}
 \source{
 \url{https://en.wikipedia.org/wiki/National_Women\%27s_Soccer_League}
 }

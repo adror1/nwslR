@@ -3,7 +3,8 @@ globalVariables(c("type", "value", "game_id", "status", "team_id", "link",
                   "player_id", "match_name", "image_head", "nation", "pos",
                   "last_name", "shirt_number", "sub_position", "game_started",
                   "mins_played", "formation_place", "total_sub_off", "player_off_id", "player_on_id",
-                  "position", "position_side"))
+                  "position", "position_side", "formation_place_11", "formation_place_59",
+                  "formation_place_61"))
 
 
 #pulls JSON files for each game with information regarding each game and returns a list
@@ -55,7 +56,9 @@ create_df_player <- function(boxscore, game_id) {
                                str_detect(team_id, "sky-blue") ~ "NJ",
                                str_detect(team_id, "utah-royals") ~ "UTA",
                                str_detect(team_id, "north-carolina-courage") ~ "NC",
-                               str_detect(team_id, "washington-spirit") ~ "WAS"
+                               str_detect(team_id, "washington-spirit") ~ "WAS",
+                               str_detect(team_id, "ol-reign") ~ "OLR"
+
     )) %>%
     select(game_id, status, team_id, everything())
 
@@ -76,7 +79,8 @@ create_df_player <- function(boxscore, game_id) {
                                str_detect(team_id, "sky-blue") ~ "NJ",
                                str_detect(team_id, "utah-royals") ~ "UTA",
                                str_detect(team_id, "north-carolina-courage") ~ "NC",
-                               str_detect(team_id, "washington-spirit") ~ "WAS"
+                               str_detect(team_id, "washington-spirit") ~ "WAS",
+                               str_detect(team_id, "ol-reign") ~ "OLR"
     )) %>%
     select(game_id, status, team_id, everything())
 
@@ -103,9 +107,10 @@ create_df_player <- function(boxscore, game_id) {
 
   full_stats_id <- full_stats_id %>%
     rename_all(.funs = to_any_case) %>%
-    select(-player_id, -match_name, -stat, -image_head, -full_name, -nation, -pos, -name_other) %>%
-    select(game_id:last_name, person_id, shirt_number, position, position_side, game_started,
-           mins_played, formation_place, total_sub_off, player_off_id, player_on_id, everything())
+    rename(formation_place = formation_place_11) %>%
+    select(-player_id, -match_name, -stat, -image_head, -full_name, -nation, -pos, -name_other, -formation_place_61, -formation_place_59) %>%
+    select(game_id:last_name, person_id, formation_place, shirt_number, position, position_side, game_started,
+           mins_played, total_sub_off, player_off_id, player_on_id, everything())
 
 
   #returns two teams

@@ -4,7 +4,8 @@
 \name{fieldplayer_overall_season_stats}
 \alias{fieldplayer_overall_season_stats}
 \title{Player stats for field players in each season}
-\format{A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for field players
+\format{
+A data frame with one row for each player in each season for which data is available (2013-2019) with statistics for field players
 \describe{
 \item{person_id}{the id of the player beginning at 1}
 \item{season}{season for which the statistics represent}
@@ -20,7 +21,8 @@
 \item{p_katt}{penalty kicks attempted}
 \item{crd_y}{total number of yellow cards received}
 \item{crd_r}{total number of red cards received}
-}}
+}
+}
 \source{
 \url{https://fbref.com/en/comps/182/keepers/NWSL-Stats}
 }

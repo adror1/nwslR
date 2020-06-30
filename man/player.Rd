@@ -4,14 +4,16 @@
 \name{player}
 \alias{player}
 \title{Player information for all players in the National Women's Soccer League (NWSL)}
-\format{A data frame with one row for each player that is currently playing or has played in the NWSL
+\format{
+A data frame with one row for each player that is currently playing or has played in the NWSL
 \describe{
 \item{person_id}{the id of the player}
 \item{player}{the player's name}
 \item{nation}{home city of team}
 \item{pos}{home state of team}
 \item{name_other}{nicknames, other names that player uses, etc.}
-}}
+}
+}
 \usage{
 player
 }
