@@ -57,7 +57,7 @@ create_df_player <- function(boxscore, game_id) {
                                str_detect(team_id, "utah-royals") ~ "UTA",
                                str_detect(team_id, "north-carolina-courage") ~ "NC",
                                str_detect(team_id, "washington-spirit") ~ "WAS",
-                               str_detect(team_id, "ol-reign") ~ "OLR"
+                               str_detect(team_id, "ol-reign") ~ "RGN"
 
     )) %>%
     select(game_id, status, team_id, everything())
