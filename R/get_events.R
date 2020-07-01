@@ -99,7 +99,7 @@ data_wrangling <- function(df) {
                                str_detect(team, "Utah Royals") ~ "UTA",
                                str_detect(team, "North Carolina Courage") ~ "NC",
                                str_detect(team, "Washington Spirit") ~ "WAS",
-                            str_detect(team, "OL Reign") ~ "OLR",
+                            str_detect(team, "OL Reign") ~ "RGN",
     )) %>%
     select(game_id, team, minute, period, second, time, play_status, type, shot_type,
            shot_player_name, assist_type, assist_player_name, shot_loc, sog_loc,
