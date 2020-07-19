@@ -109,7 +109,7 @@ create_df_player <- function(boxscore, game_id) {
     rename_all(.funs = to_any_case) %>%
     # rename(formation_place = formation_place_11) %>%
     select(-player_id, -match_name, -stat, -image_head, -full_name, -nation, -pos, -name_other) %>%
-    select(game_id:last_name, person_id, formation_place, shirt_number, position, position_side, game_started,
+    select(game_id:last_name, person_id, shirt_number, position, position_side, game_started,
            total_sub_off, player_off_id, player_on_id, everything())
 
 
