@@ -106,7 +106,8 @@ player <- player %>%
                                 player == 	"Crystal Thomas"	~	"Crystal Elaine Thomas",
                                 player == 	"Thaisa"	~	"Thaisa Moreno",
                                 player == 	"Arianna Romero"	~	"Ari Romero",
-                                player == 	"Celia Jiménez"	~	"Celia"),
+                                player == 	"Celia Jiménez"	~	"Celia",
+                                player == 	"Rebecca Quinn"	~	"Quinn"),
          nation = str_replace_all(nation, " ", ""))
 
 #exporting final player info
