@@ -99,7 +99,10 @@ data_wrangling <- function(df) {
                                str_detect(team, "Utah Royals") ~ "UTA",
                                str_detect(team, "North Carolina Courage") ~ "NC",
                                str_detect(team, "Washington Spirit") ~ "WAS",
-                            str_detect(team, "OL Reign") ~ "RGN",
+                               str_detect(team, "OL Reign") ~ "RGN",
+                               str_detect(team, "Kansas City") ~ "KC",
+                               str_detect(team, "Racing Louisville") ~ "LOU",
+                               str_detect(team, "Gotham FC") ~ "NJNY"
     )) %>%
     select(game_id, team, minute, period, second, time, play_status, type, shot_type,
            shot_player_name, assist_type, assist_player_name, shot_loc, sog_loc,
@@ -155,8 +158,8 @@ get_events <- function(game_id) {
 
   #two error handling situations
 
-  if(season_request > 2020 | season_request < 2016) {
-    stop("Invalid Year. Please choose a game from between 2016-2020.")
+  if(season_request > 2021 | season_request < 2016) {
+    stop("Invalid Year. Please choose a game from between 2016-2021.")
   }
 
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",

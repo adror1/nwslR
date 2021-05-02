@@ -40,8 +40,10 @@ create_df_team <- function(boxscore, game_id) {
                             str_detect(team_id, "utah-royals") ~ "UTA",
                             str_detect(team_id, "north-carolina-courage") ~ "NC",
                             str_detect(team_id, "washington-spirit") ~ "WAS",
-                            str_detect(team_id, "ol-reign") ~ "RGN"
-
+                            str_detect(team_id, "ol-reign") ~ "RGN",
+                            str_detect(team_id, "kansas-city-1") ~ "KC",
+                            str_detect(team_id, "racing-louisville") ~ "LOU",
+                            str_detect(team_id, "gotham-fc") ~ "NJNY"
                             )) %>%
   select(game_id, status, team_id, everything())
 
@@ -65,7 +67,10 @@ create_df_team <- function(boxscore, game_id) {
                             str_detect(team_id, "utah-royals") ~ "UTA",
                             str_detect(team_id, "north-carolina-courage") ~ "NC",
                             str_detect(team_id, "washington-spirit") ~ "WAS",
-                            str_detect(team_id, "ol-reign") ~ "OLR"
+                            str_detect(team_id, "ol-reign") ~ "RGN",
+                            str_detect(team_id, "kansas-city-1") ~ "KC",
+                            str_detect(team_id, "racing-louisville") ~ "LOU",
+                            str_detect(team_id, "gotham-fc") ~ "NJNY"
 
     )) %>%
     select(game_id, status, team_id, everything())
@@ -102,8 +107,8 @@ get_adv_team_stats <- function(game_id) {
 
   #two error handling situations
 
-  if(season_request > 2020 | season_request < 2016) {
-    stop("Invalid Year. Please choose a game from between 2016-2020.")
+  if(season_request > 2021 | season_request < 2016) {
+    stop("Invalid Year. Please choose a game from between 2016-2021.")
   }
 
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
