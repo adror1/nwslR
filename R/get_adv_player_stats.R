@@ -147,8 +147,8 @@ get_adv_player_stats <- function(game_id) {
 
   #two error handling situations
 
-  if(season_request > 2020 | season_request < 2016) {
-    stop("Invalid Year. Please choose a game from between 2016-2020.")
+  if(season_request > 2021 | season_request < 2016) {
+    stop("Invalid Year. Please choose a game from between 2016-2021.")
   }
 
   if(game_id %in% c("chicago-red-stars-vs-north-carolina-courage-2017-09-03",
