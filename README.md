@@ -126,4 +126,4 @@ Contributors
 ------------
 
 -   [Arielle Dror](https://github.com/adror1)
--   [Sophia Tannir](https://github.com/stannir98)
+-   [Sophia Tannir](https://github.com/sophiatannir)
